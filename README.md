@@ -1,6 +1,7 @@
 # Payadel README template
 
 This project includes the default Payadel readme template.
+
 Files like the changelog, contributing, github actions, etc.
 
 ## Usage
@@ -8,7 +9,7 @@ Files like the changelog, contributing, github actions, etc.
 1. Download Files:
 
 ```bash
-curl https://github.com/Payadel/README/archive/refs/heads/master.zip | 7z a -tzip README-master/template
+wget https://github.com/Payadel/README/archive/refs/heads/master.zip && unzip master.zip README-master/template/* && mv README-master/template/* .; rm master.zip
 ```
 
 2. Update files
@@ -69,7 +70,7 @@ See [LICENSE](LICENSE) for more information.
 
 ## Related
 
-Here are some related projects
+Here are some related projects:
 
 - [Awesome README](https://github.com/matiassingers/awesome-readme)
 - [shields](https://shields.io/)

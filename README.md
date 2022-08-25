@@ -14,8 +14,6 @@ wget https://github.com/Payadel/README/archive/refs/heads/master.zip && unzip ma
 
 2. Update files
 
-3. Add `secrets.GITHUB_TOKEN` for label github actions.
-
 ## Files
 
 ### Issues

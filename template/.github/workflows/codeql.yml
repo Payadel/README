@@ -8,6 +8,8 @@ on:
 #     branches: [ main ]
   schedule:
     - cron: '40 14 * * 6' #this workflow will run at 14:40 UTC every Saturday
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   codeql:

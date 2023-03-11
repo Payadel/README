@@ -19,4 +19,5 @@ jobs:
           default-branch: dev
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
+          path: template
           changelog-types: '[{"type": "feat","section": "Features","hidden": false},{"type": "fix","section": "Bug Fixes","hidden": false},{"type": "deprecate","section": "Deprecates","hidden": false},{"type": "security","section": "Security","hidden": false}]'

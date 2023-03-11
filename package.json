@@ -1,0 +1,18 @@
+{
+  "version": "0.0.0",
+  "scripts": {
+    "release": "standard-version",
+    "release:dry": "standard-version --dry-run; printf 'If everything is correct, use npm run release\n'",
+    "release:init": "standard-version --first-release",
+    "release:prerelease": "standard-version --prerelease",
+    "release:as": "standard-version --release-as",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
+  },
+  "devDependencies": {
+    "@action-validator/cli": "^0.5.1",
+    "@action-validator/core": "^0.5.1",
+    "standard-version": "^9.5.0"
+  }
+}

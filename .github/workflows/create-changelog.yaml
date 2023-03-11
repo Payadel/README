@@ -1,0 +1,46 @@
+name: Create Pull Request for Changelog
+on:
+  push:
+    branches:
+      - test-release
+
+permissions:
+  contents: write
+  pull-requests: write
+
+
+jobs:
+  createPullRequest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Create Changelog
+        run: |
+          git config --global user.email "github-action@github.com"
+          git config --global user.name "Github Action"
+          npm install
+          npm run release
+
+      - name: Read changelog
+        uses: mathiasvr/command-output@v1
+        id: changelog_data
+        with:
+          run: cat CHANGELOG.md
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: "chore(changelog): create new release"
+          branch: test-release
+          delete-branch: true
+          title: 'Changelog'
+          body: ${{ steps.changelog_data.outputs.stdout }}
+          assignees: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>

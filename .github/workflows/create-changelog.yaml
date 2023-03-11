@@ -39,7 +39,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           commit-message: "chore(changelog): create new release"
-          branch: test-release
+          branch: changelog
           delete-branch: true
           title: 'Changelog'
           body: ${{ steps.changelog_data.outputs.stdout }}

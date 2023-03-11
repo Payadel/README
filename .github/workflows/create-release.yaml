@@ -13,8 +13,12 @@ jobs:
       contents: write
     steps:
     - uses: actions/checkout@v2
+
+    - name: create release file
+      run: zip -r release.zip template
+
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: "template"
+        artifacts: "release.zip"
         artifactErrorsFailBuild: true
         bodyFile: "CHANGELOG.md"

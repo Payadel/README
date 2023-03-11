@@ -21,4 +21,5 @@ jobs:
       with:
         artifacts: "release.zip"
         artifactErrorsFailBuild: true
+        allowUpdates: true
         bodyFile: "CHANGELOG.md"

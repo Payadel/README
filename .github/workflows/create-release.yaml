@@ -1,25 +1,49 @@
-name: Create Releases
+name: Release
 
 on:
   push:
-    tags:
-    - 'v*'
+    branches:
+      - main
+
+permissions:
+  contents: write
 
 jobs:
-
-  build:
+  Tag:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
-    - name: create release file
-      run: (cd template && zip -r ../release.zip .)
+      - name: Tag New Version
+        id: tag_version
+        run: |
+          git config --global user.email "github-action@github.com"
+          git config --global user.name "Github Action"
+          npm install -g standard-version
+          npm run release -- --skip.changelog
+          version=$(node -p -e "require('./package.json').version")
+          echo "version=$version" >> $GITHUB_OUTPUT
+          git push --follow-tags origin main
 
-    - uses: ncipollo/release-action@v1
-      with:
-        artifacts: "release.zip"
-        artifactErrorsFailBuild: true
-        allowUpdates: true
-        bodyFile: "CHANGELOG.md"
+      - name: create release file
+        run: (cd template && zip -r ../release.zip .)
+
+      - name: GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "release.zip"
+          artifactErrorsFailBuild: true
+          allowUpdates: true
+          bodyFile: "CHANGELOG.md"
+          tag: 'v${{ steps.tag_version.outputs.version }}'
+
+      - name: Merge to branch dev
+        run: |
+          git checkout dev
+          git merge main
+          git push

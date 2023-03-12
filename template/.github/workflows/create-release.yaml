@@ -1,0 +1,25 @@
+name: Create Releases
+
+on:
+  push:
+    tags:
+    - 'v*'
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: create release file
+      run: (cd template && zip -r ../release.zip .)
+
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "release.zip"
+        artifactErrorsFailBuild: true
+        allowUpdates: true
+        bodyFile: "CHANGELOG.md"

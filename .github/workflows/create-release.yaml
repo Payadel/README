@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - master
 
 permissions:
   contents: write
@@ -28,7 +28,7 @@ jobs:
           npm run release -- --skip.changelog
           version=$(node -p -e "require('./package.json').version")
           echo "version=$version" >> $GITHUB_OUTPUT
-          git push --follow-tags origin main
+          git push --follow-tags origin master
 
       - name: create release file
         run: (cd template && zip -r ../release.zip .)
@@ -45,5 +45,5 @@ jobs:
       - name: Merge to branch dev
         run: |
           git checkout dev
-          git merge main
+          git merge master
           git push

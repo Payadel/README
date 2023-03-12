@@ -12,7 +12,17 @@ Files like the changelog, contributing, github actions, etc.
 wget https://github.com/payadel/readme/releases/latest/download/release.zip; wait; unzip release.zip; wait; rm release.zip
 ```
 
-2. Update files
+2. Run requirements.py:
+
+```bash
+chmod +x requirements.py && ./requirements.py
+```
+Or use **python**:
+```bash
+python3 requirements.py
+```
+
+3. Update files
 
 ## Files
 

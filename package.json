@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "tag": "version=$(node -p -e \"require('./package.json').version\"); git tag v$version; git push --follow-tags origin; echo v$version",
     "release": "standard-version",

@@ -1,7 +1,6 @@
 {
   "version": "0.0.0",
   "scripts": {
-    "tag": "version=$(node -p -e \"require('./package.json').version\"); git tag v$version; git push --follow-tags origin; echo v$version",
     "release": "standard-version",
     "release:dry": "standard-version --dry-run; printf 'If everything is correct, use npm run release\n'",
     "release:init": "standard-version --first-release",

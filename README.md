@@ -9,7 +9,7 @@ Files like the changelog, contributing, github actions, etc.
 1. Download Files:
 
 ```bash
-wget https://github.com/Payadel/README/archive/refs/heads/master.zip && unzip master.zip README-master/template/* && (cp -frv README-master/template/{.,}* . || true) && rm -r README-master; rm master.zip
+wget https://github.com/payadel/readme/releases/latest/download/release.zip; wait; unzip release.zip; wait; rm release.zip
 ```
 
 2. Update files

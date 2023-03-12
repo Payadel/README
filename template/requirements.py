@@ -99,7 +99,6 @@ def main():
     # Install npm packages
     if get_shell_return_code("npm --version") == 0:
         print(generate_message("Install npm packages..."))
-        run_shell("npm install --save-dev @action-validator/core @action-validator/cli")
         run_shell("npm install")
     else:
         print(generate_message("Can not install npm packages."))

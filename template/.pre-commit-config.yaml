@@ -15,3 +15,4 @@ repos:
     rev: v0.5.1
     hooks:
       - id: action-validator
+        stages: [ commit-msg ]

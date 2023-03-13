@@ -2,8 +2,8 @@
   "version": "0.0.0",
   "scripts": {
     "actions:watch": "gh run watch && notify-send \"run is done!\"",
-    "action:release": "gh workflow run Release --ref dev",
-    "action:changelog": "gh workflow run 'create changelog' --ref dev",
+    "action:release": "gh workflow run Release --ref dev -f version=''",
+    "action:changelog": "gh workflow run 'create changelog' --ref dev -f version=''",
     "version": "node -p -e \"require('./package.json').version\"",
     "version:as": "standard-version --skip.changelog --skip.tag --skip.commit --release-as",
     "release": "standard-version",

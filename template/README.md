@@ -31,13 +31,13 @@
 <summary>Table of Contents</summary>
 
 - [About](#about)
-  - [Demo](#demo)
-  - [Built With](#built-with)
+    - [Demo](#demo)
+    - [Built With](#built-with)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
 - [Usage](#usage)
-  - [Documentation](#documentation)
+    - [Documentation](#documentation)
 - [Known issues](#known-issues)
 - [CHANGELOG](#changelog)
 - [Features](#features)
@@ -69,8 +69,8 @@
 > Describe what sets this apart from related-projects.
 > You don't have to answer all the questions -- just the ones relevant to your project.
 
-
 ### Demo
+
 **Screenshot**: If the software has visual components, place a screenshot after the description; e.g.,
 
 <details>
@@ -95,25 +95,19 @@
 
 **Server:** Node, Express
 
-
 ## Getting Started
 
 ### Prerequisites
 
 > **[?]**
 > What are the project requirements/dependencies?
-> Describe any dependencies that must be installed for this software to work.
-This includes programming languages, databases or other storage mechanisms, build tools, frameworks, and so forth.
-If specific versions of other software are required, or known not to work, call that out.
+> Describe any dependencies that must be installed for this software to work. This includes programming languages, databases or other storage mechanisms, build tools, frameworks, and so forth. If specific versions of other software are required, or known not to work, call that out.
 
 ### Installation
 
 > **[?]**
 > Describe how to install and get started with the project.
-> Detailed instructions on how to install, configure, and get the project running.
-This should be frequently tested to ensure reliability. Alternatively, link to
-a separate [INSTALL](INSTALL.md) document.
-
+> Detailed instructions on how to install, configure, and get the project running. This should be frequently tested to ensure reliability. Alternatively, link to a separate [INSTALL](INSTALL.md) document.
 
 ## Usage
 
@@ -133,25 +127,26 @@ function App() {
 
 [Documentation](https://linktodocumentation)
 
-
 ## Known issues
 
 Document any known significant shortcomings with the software.
 
 ## CHANGELOG
 
-
 ## Features
 
-- 
-- 
+-
+-
 
 ## Roadmap
 
-See the [open issues](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues) for a list of proposed features (and known
+issues).
 
-- [Top Feature Requests](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
-- [Top Bugs](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
+- [Top Feature Requests](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (
+  Add your votes using the 👍 reaction)
+- [Top Bugs](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (
+  Add your votes using the 👍 reaction)
 - [Newest Bugs](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 
 ## Support
@@ -181,20 +176,22 @@ Answer 1
 
 Answer 2
 
-
 ## Project assistance
 
 If you want to say **thank you** or/and support active development of PROJECT_NAME:
 
 - Add a [GitHub Star](https://github.com/GITHUB_USERNAME/REPO_SLUG) to the project.
 - Tweet about the PROJECT_NAME.
-- Write interesting articles about the project on [Dev.to](https://dev.to/), [Medium](https://medium.com/) or your personal blog.
+- Write interesting articles about the project on [Dev.to](https://dev.to/), [Medium](https://medium.com/) or your
+  personal blog.
 
 Together, we can make PROJECT_NAME **better**!
 
 ## Contributing
 
-First off, thanks for taking the time to contribute! Contributions are what make the free/open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are **greatly appreciated**.
+First off, thanks for taking the time to contribute! Contributions are what make the free/open-source community such an
+amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are **greatly
+appreciated**.
 
 Please read [our contribution guidelines](docs/CONTRIBUTING.md), and thank you for being involved!
 
@@ -202,12 +199,13 @@ Please read [our contribution guidelines](docs/CONTRIBUTING.md), and thank you f
 
 The original setup of this repository is by [FULL_NAME](https://github.com/GITHUB_USERNAME).
 
-For a full list of all authors and contributors, see [the contributors page](https://github.com/GITHUB_USERNAME/REPO_SLUG/contributors).
+For a full list of all authors and contributors,
+see [the contributors page](https://github.com/GITHUB_USERNAME/REPO_SLUG/contributors).
 
 ## Security
 
-PROJECT_NAME follows good practices of security, but 100% security cannot be assured.
-PROJECT_NAME is provided **"as is"** without any **warranty**.
+PROJECT_NAME follows good practices of security, but 100% security cannot be assured. PROJECT_NAME is provided **"as
+is"** without any **warranty**.
 
 _For more information and to report security issues, please refer to our [security documentation](docs/SECURITY.md)._
 
@@ -222,7 +220,6 @@ See [LICENSE](LICENSE) for more information.
 > **[?]**
 > If your work was funded by any organization or institution, acknowledge their support here.
 > In addition, if your work relies on other software libraries, or was inspired by looking at other work, it is appropriate to acknowledge this intellectual debt too.
-
 
 ## Related
 

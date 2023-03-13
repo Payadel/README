@@ -9,6 +9,9 @@ on:
       release_directory:
         required: true
         default: 'release'
+      version:
+        required: false
+        default: ''
       skip_changelog:
         type: boolean
         default: true
@@ -39,6 +42,7 @@ jobs:
           echo "release_file_name: ${{ inputs.release_file_name }}"
           echo "release_directory: ${{ inputs.release_directory }}"
           echo "skip_changelog: ${{ inputs.skip_changelog }}"
+          echo "version: ${{ inputs.version }}"
           echo "Current Branch: $(git rev-parse --abbrev-ref HEAD)"
 
       - name: Tag New Version
@@ -46,9 +50,11 @@ jobs:
         run: |
           git config --global user.email "github-action@github.com"
           git config --global user.name "Github Action"
-          
           npm install -g standard-version
-          if [ ${{ inputs.skip_changelog }} == true ]; then npm run release -- --skip.changelog; else npm run release; fi
+          
+          if [ -z "${{ inputs.version }}" ]; then release_command="standard-version"; else release_command="standard-version --release-as ${{ inputs.version }}"; fi
+          
+          if [ ${{ inputs.skip_changelog }} == true ]; then $release_command --skip.changelog; else $release_command; fi
           
           version=$(node -p -e "require('./package.json').version")
           echo "version=$version" >> $GITHUB_OUTPUT

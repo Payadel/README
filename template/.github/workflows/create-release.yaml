@@ -1,16 +1,31 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      release_file_name:
+        required: true
+        default: 'release'
+      release_directory:
+        required: true
+        default: 'release'
+      skip_changelog:
+        type: boolean
+        default: true
+        description: Skip generate changelog
 
 permissions:
   contents: write
 
 jobs:
-  Tag:
+  default:
     runs-on: ubuntu-latest
+
+    # Limit branch:
+    if: github.ref == 'refs/heads/dev'
+    # Or
+    #if: github.ref != 'refs/heads/main'
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -19,31 +34,37 @@ jobs:
         with:
           node-version: 16
 
+      - name: Print inputs
+        run: |
+          echo "release_file_name: ${{ inputs.release_file_name }}"
+          echo "release_directory: ${{ inputs.release_directory }}"
+          echo "skip_changelog: ${{ inputs.skip_changelog }}"
+          echo "Current Branch: $(git rev-parse --abbrev-ref HEAD)"
+
       - name: Tag New Version
         id: tag_version
         run: |
           git config --global user.email "github-action@github.com"
           git config --global user.name "Github Action"
+          
           npm install -g standard-version
-          npm run release -- --skip.changelog
+          if [ ${{ inputs.skip_changelog }} == true ]; then npm run release -- --skip.changelog; else npm run release; fi
+          
           version=$(node -p -e "require('./package.json').version")
           echo "version=$version" >> $GITHUB_OUTPUT
-          git push --follow-tags origin main
+          echo "New Version: $version"
+          
+          git push --follow-tags origin $(git rev-parse --abbrev-ref HEAD)
 
       - name: create release file
-        run: (cd template && zip -r ../release.zip .)
+        run: |
+          (cd ${{ inputs.release_directory }} && zip -r "$(git rev-parse --show-toplevel)/${{ inputs.release_file_name }}.zip" .)
 
       - name: GitHub Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "release.zip"
+          artifacts: ${{ inputs.release_file_name }}.zip
           artifactErrorsFailBuild: true
           allowUpdates: true
           bodyFile: "CHANGELOG.md"
           tag: 'v${{ steps.tag_version.outputs.version }}'
-
-      - name: Merge to branch dev
-        run: |
-          git checkout dev
-          git merge main
-          git push

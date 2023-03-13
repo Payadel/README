@@ -1,4 +1,4 @@
-name: Create Changelog
+name: Changelog
 
 on:
   push:

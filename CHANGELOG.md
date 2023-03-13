@@ -9,6 +9,13 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **version:** correct initial version (0.0.0 instead of 0.1.1) ([e2a7446](https://github.com/Payadel/README/commit/e2a74463ce744b9c52ebb153a30bd421a2aa95cf))
 
+### [0.1.3](https://github.com/Payadel/README/compare/v0.1.2...v0.1.3) (2023-03-13)
+
+
+### Fixes
+
+* **version:** correct initial version (0.0.0 instead of 0.1.1) ([e2a7446](https://github.com/Payadel/README/commit/e2a74463ce744b9c52ebb153a30bd421a2aa95cf))
+
 ### [0.1.2](https://github.com/Payadel/README/compare/v0.1.1...v0.1.2) (2023-03-12)
 
 

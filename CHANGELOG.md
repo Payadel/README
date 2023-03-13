@@ -1,7 +1,24 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
-See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.1.3](https://github.com/Payadel/README/compare/v0.1.2...v0.1.3) (2023-03-13)
+
+
+### Features
+
+* **release:** update create-release.yaml fix [#14](https://github.com/Payadel/README/issues/14) ([8d28bb5](https://github.com/Payadel/README/commit/8d28bb5e17b92ea50c87f1efe89e560f7f0ad21b))
+
+
+### Development: CI/CD, Build, etc
+
+* **release:** the execution of the release action becomes manual ([f956253](https://github.com/Payadel/README/commit/f956253a62d3a4f4af2c6ca204fdfd91f6458f1e))
+
+
+### Fixes
+
+* **style:** refactor file styles like space, empty line, etc ([d541be3](https://github.com/Payadel/README/commit/d541be32188f16f71805a396544fb678b86de2e5))
+* **version:** correct initial version (0.0.0 instead of 0.1.1) ([e2a7446](https://github.com/Payadel/README/commit/e2a74463ce744b9c52ebb153a30bd421a2aa95cf))
 
 ### [0.1.2](https://github.com/Payadel/README/compare/v0.1.1...v0.1.2) (2023-03-12)
 

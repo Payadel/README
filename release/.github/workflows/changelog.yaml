@@ -1,9 +1,6 @@
 name: Changelog
 
 on:
-  push:
-    branches:
-      - dev
   workflow_dispatch:
     inputs:
       version:

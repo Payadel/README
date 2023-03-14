@@ -8,8 +8,8 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * **changelog:** running create-changelog.yaml manually with the specifying a version ([b51e587](https://github.com/Payadel/README/commit/b51e5872b24806d56a6b68bd2ced1ab39d399ae1))
-* **package-json:** add sample input for github commands ([9f7755e](https://github.com/Payadel/README/commit/9f7755e93de40fd629e93d0a5e71a75da3f510ba))
 * **package-json:** add scripts to package.json like GitHub cli, version ([98881ce](https://github.com/Payadel/README/commit/98881cecfe189b009aa19ad32b940b6a0eb7aca8))
+* **package-json:** add sample input for github commands ([9f7755e](https://github.com/Payadel/README/commit/9f7755e93de40fd629e93d0a5e71a75da3f510ba))
 * **release:** add version to action input for create specific version ([419c6c0](https://github.com/Payadel/README/commit/419c6c017409bb93ac636689092535bc74ac2528))
 * **release:** update create-release.yaml fix [#14](https://github.com/Payadel/README/issues/14) ([8d28bb5](https://github.com/Payadel/README/commit/8d28bb5e17b92ea50c87f1efe89e560f7f0ad21b))
 
@@ -28,7 +28,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Fixes
 
-* **package-json:** fix GitHub scripts name ([7e056f5](https://github.com/Payadel/README/commit/7e056f562426494bdfef7984574af658f673b354))
 * **release:** for better clarity, change `template` directory name to `release` ([a3b38fc](https://github.com/Payadel/README/commit/a3b38fc6dbcbfeb46bcb19a4854100ab4e3a1162))
 * remove unnecessary section from requirements.py ([8feaa9e](https://github.com/Payadel/README/commit/8feaa9eb9b5b16856642582068ec762fc26333ca))
 * simplify action names ([43da9d5](https://github.com/Payadel/README/commit/43da9d539ce293d3d0d89c17466c89257b28f04f))

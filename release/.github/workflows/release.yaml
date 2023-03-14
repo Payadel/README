@@ -1,0 +1,76 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_file_name:
+        required: true
+        default: 'release'
+      release_directory:
+        required: true
+        default: 'release'
+      version:
+        required: false
+        default: ''
+      skip_changelog:
+        type: boolean
+        default: true
+        description: Skip generate changelog
+
+permissions:
+  contents: write
+
+jobs:
+  default:
+    runs-on: ubuntu-latest
+
+    # Limit branch:
+    if: github.ref == 'refs/heads/dev'
+    # Or
+    #if: github.ref != 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Print inputs
+        run: |
+          echo "release_file_name: ${{ inputs.release_file_name }}"
+          echo "release_directory: ${{ inputs.release_directory }}"
+          echo "skip_changelog: ${{ inputs.skip_changelog }}"
+          echo "version: ${{ inputs.version }}"
+          echo "Current Branch: $(git rev-parse --abbrev-ref HEAD)"
+
+      - name: Tag New Version
+        id: tag_version
+        run: |
+          git config --global user.email "github-action@github.com"
+          git config --global user.name "Github Action"
+          npm install -g standard-version
+          
+          if [ -z "${{ inputs.version }}" ]; then release_command="standard-version"; else release_command="standard-version --release-as ${{ inputs.version }}"; fi
+          
+          if [ ${{ inputs.skip_changelog }} == true ]; then $release_command --skip.changelog; else $release_command; fi
+          
+          version=$(node -p -e "require('./package.json').version")
+          echo "version=$version" >> $GITHUB_OUTPUT
+          echo "New Version: $version"
+          
+          git push --follow-tags origin $(git rev-parse --abbrev-ref HEAD)
+
+      - name: create release file
+        run: |
+          (cd ${{ inputs.release_directory }} && zip -r "$(git rev-parse --show-toplevel)/${{ inputs.release_file_name }}.zip" .)
+
+      - name: GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: ${{ inputs.release_file_name }}.zip
+          artifactErrorsFailBuild: true
+          allowUpdates: true
+          bodyFile: "CHANGELOG.md"
+          tag: 'v${{ steps.tag_version.outputs.version }}'

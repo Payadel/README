@@ -3,9 +3,9 @@ name: CodeQL
 
 on:
   push:
-#     branches: [ main ]
-#   pull_request:
-#     branches: [ main ]
+  #     branches: [ main ]
+  #   pull_request:
+  #     branches: [ main ]
   schedule:
     - cron: '40 14 * * 6' #this workflow will run at 14:40 UTC every Saturday
   # Allows you to run this workflow manually from the Actions tab
@@ -16,22 +16,22 @@ jobs:
     name: 🏭 Scanning
     runs-on: ubuntu-latest
     
-#     strategy:
-#       fail-fast: false
-#       matrix:
-#         language: [ 'csharp' ]
+    #     strategy:
+    #       fail-fast: false
+    #       matrix:
+    #         language: [ 'csharp' ]
     
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v2
-        
+
       - name: 🏗 Initialize CodeQL
         uses: github/codeql-action/init@v2
-#         with:
-#           languages: ${{ matrix.language }}
+        #         with:
+        #           languages: ${{ matrix.language }}
 
-#       - name: Autobuild
-#         uses: github/codeql-action/autobuild@v2
-        
+        #       - name: Autobuild
+        #         uses: github/codeql-action/autobuild@v2
+
       - name: 🚀 Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2

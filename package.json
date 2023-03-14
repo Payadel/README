@@ -1,6 +1,11 @@
 {
   "version": "0.1.2",
   "scripts": {
+    "actions:watch": "gh run watch && notify-send \"run is done!\"",
+    "actions:release": "gh workflow run Release --ref dev -f version=''",
+    "actions:changelog": "gh workflow run changelog --ref dev -f version=''",
+    "version": "node -p -e \"require('./package.json').version\"",
+    "version:as": "standard-version --skip.changelog --skip.tag --skip.commit --release-as",
     "release": "standard-version",
     "release:dry": "standard-version --dry-run; printf 'If everything is correct, use npm run release\n'",
     "release:init": "standard-version --first-release",

@@ -1,9 +1,14 @@
-name: Create Changelog
+name: Changelog
 
 on:
   push:
     branches:
       - dev
+  workflow_dispatch:
+    inputs:
+      version:
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -20,11 +25,24 @@ jobs:
         with:
           node-version: 16
 
+      - name: Print & Validate inputs
+        run: |
+          echo "version: ${{ inputs.version }}"
+          echo "Current Branch: $(git rev-parse --abbrev-ref HEAD)"
+
       - name: Create Changelog
         id: create_changelog
         run: |
           npm install -g standard-version
-          npm run release -- --skip.tag --skip.commit
+          
+          if [ ! -z "${{ inputs.version }}" ]; then npm run version:as ${{ inputs.version }}; fi
+          
+          command="release -- --skip.tag --skip.commit"
+          if [ ! -z "${{ inputs.version }}" ]; then command="$command --skip.bump"; fi
+          
+          echo "npm run $command..."
+          npm run $command
+          
           git add CHANGELOG.md
           git checkout -- package.json
           version=$(cat CHANGELOG.md | grep -o -E '[0-9]+\.[0-9]+\.[0-9]' | sed -n '1p')

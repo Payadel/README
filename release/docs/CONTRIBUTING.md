@@ -1,7 +1,8 @@
 # Contributing
 
-When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
-Please note we have a [code of conduct](CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
+When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other
+method with the owners of this repository before making a change. Please note we have
+a [code of conduct](CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
 
 ## Development environment setup
 
@@ -16,7 +17,7 @@ To set up a development environment, please follow these steps:
    ```sh
    git clone https://github.com/GITHUB_USERNAME/REPO_SLUG
    ```
-   
+
 2. To run this project, you will need to add the following environment variables to your .env file
 
 `API_KEY`
@@ -25,8 +26,7 @@ To set up a development environment, please follow these steps:
 
 3. TODO
 
-4. Running Tests.
-To run tests, run the following command
+4. Running Tests. To run tests, run the following command
 
 ```bash
   npm run test
@@ -34,7 +34,9 @@ To run tests, run the following command
 
 ## Issues and feature requests
 
-You've found a bug in the source code, a mistake in the documentation or maybe you'd like a new feature? You can help us by [submitting an issue on GitHub](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues). Before you create an issue, make sure to search the issue archive -- your issue may have already been addressed!
+You've found a bug in the source code, a mistake in the documentation or maybe you'd like a new feature? You can help us
+by [submitting an issue on GitHub](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues). Before you create an issue,
+make sure to search the issue archive -- your issue may have already been addressed!
 
 Please try to create bug reports that are:
 
@@ -52,6 +54,8 @@ Please try to create bug reports that are:
    that relate to your submission. You don't want to duplicate effort.
 2. Fork the project
 3. Create your feature branch (`git checkout -b feat/amazing_feature`)
-4. Commit your changes (`git commit -m 'feat: add amazing_feature'`) PROJECT_NAME uses [conventional commits](https://www.conventionalcommits.org), so please follow the specification in your commit messages.
+4. Commit your changes (`git commit -m 'feat: add amazing_feature'`) PROJECT_NAME
+   uses [conventional commits](https://www.conventionalcommits.org), so please follow the specification in your commit
+   messages.
 5. Push to the branch (`git push origin feat/amazing_feature`)
 6. Open a Pull Request

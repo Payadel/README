@@ -103,12 +103,6 @@ def main():
     else:
         print(generate_message("Can not install npm packages."))
 
-    # Set start version
-    tags = run_shell("git tag").stdout.decode("utf-8").strip()
-    if tags == "":
-        print(generate_message("Set the version to start from 0.0.0"))
-        run_shell('git commit --allow-empty -m "chore: release 0.0.0" -m "Release-As: 0.0.0"')
-
 
 if __name__ == '__main__':
     main()

@@ -15,7 +15,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  createPullRequest:
+  changelog:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -36,7 +36,7 @@ jobs:
           npm install -g standard-version
           
           if [ ! -z "${{ inputs.version }}" ]; then npm run version:as ${{ inputs.version }}; fi
-        
+     
           command="release -- --skip.tag --skip.commit"
           if [ ! -z "${{ inputs.version }}" ]; then command="$command --skip.bump"; fi
           

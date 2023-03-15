@@ -1,11 +1,12 @@
+#https://github.com/github/codeql-action
 ---
 name: CodeQL
 
 on:
-  #push:
-  # branches: [ main ]
-  #pull_request:
-  # branches: [ main ]
+  #  push:
+  #     branches: [ main ]
+  #   pull_request:
+  #     branches: [ main ]
   schedule:
     - cron: '40 14 * * 6' #this workflow will run at 14:40 UTC every Saturday
   # Allows you to run this workflow manually from the Actions tab

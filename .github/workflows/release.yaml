@@ -8,7 +8,7 @@ on:
         default: 'release'
       release_directory:
         required: true
-        default: '.'
+        default: 'release'
       version:
         required: false
         default: ''

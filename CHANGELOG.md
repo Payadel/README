@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/Payadel/README/compare/v0.1.3...v0.2.0) (2023-03-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **changelog:** remove push event from changelog.yaml action
+* **lock-action:** increase pr-lock-inactive-days from 1 to 15
+
+### Features
+
+* **lock-action:** add inputs for workflow_dispatch and update pr-lock-inactive-days to 15 ([b2cd884](https://github.com/Payadel/README/commit/b2cd8841fe124f1723a636d7bb0e78bd9ef7ffc1))
+* **pr-labels:** add disable_reviews input for pr-labels.yml GitHub action ([afc6938](https://github.com/Payadel/README/commit/afc693846b4e5c72ab6468a6c2d55d665c651e84))
+
+
+### Development: CI/CD, Build, etc
+
+* **changelog:** remove push event from changelog.yaml action ([431f183](https://github.com/Payadel/README/commit/431f18377d3be495cc030d4eda057f531ff70700))
+* **lock-action:** add inputs for workflow_dispatch and update pr-lock-inactive-days to 15 ([5a893b0](https://github.com/Payadel/README/commit/5a893b0231a9f486eda1d55401a817788a4ac4af))
+* **pr-labels:** add disable_reviews input for pr-labels.yml GitHub action ([8ab5729](https://github.com/Payadel/README/commit/8ab5729b42eea76657b0fe545a3890f1724a1718))
+
+
+### Fixes
+
+* **changelog:** remove push event from changelog.yaml action ([09c6939](https://github.com/Payadel/README/commit/09c6939a931fa3f182f9a3e50b2b66d41e210d10))
+* **codeql:** the push event, which was activated by mistake, was disabled ([12cccc3](https://github.com/Payadel/README/commit/12cccc3c717c84c13f9643e605333b012e883c2c))
+* **docs:** remove "PROJECT_NAME" from docs. You don't need to look for "PROJECT_NAME" and change it! ([3f36969](https://github.com/Payadel/README/commit/3f369699a3c00bdd198cd6e05e9e7a6ade691899))
+
+
+### Documents
+
+* **contributing:** minor update ([593c8a6](https://github.com/Payadel/README/commit/593c8a6daf1e242d1316f59335495d78d02d64ee))
+* **readme:** update README.md ([8fea303](https://github.com/Payadel/README/commit/8fea30393d9020b62faaae1c76336bbfa6c25c56))
+
 ### [0.1.3](https://github.com/Payadel/README/compare/v0.1.2...v0.1.3) (2023-03-14)
 
 

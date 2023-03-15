@@ -1,9 +1,9 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file.
+See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ## [0.2.0](https://github.com/Payadel/README/compare/v0.1.3...v0.2.0) (2023-03-15)
-
 
 ### ⚠ BREAKING CHANGES
 
@@ -13,50 +13,16 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* **codeql:** add helper link to codeql.yml ([ceec48f](https://github.com/Payadel/README/commit/ceec48fd5948109edb4b6fa18a6e5b0ec9e74e62))
-* **dependabot:** add dependabot.yml ([02b95f2](https://github.com/Payadel/README/commit/02b95f2e0d40fea2152f2e5ca5cb1d60a12402e5))
-* **lock-action:** add inputs for workflow_dispatch and update pr-lock-inactive-days to 15 ([b2cd884](https://github.com/Payadel/README/commit/b2cd8841fe124f1723a636d7bb0e78bd9ef7ffc1))
-* **pr-labels:** add disable_reviews input for pr-labels.yml GitHub action ([afc6938](https://github.com/Payadel/README/commit/afc693846b4e5c72ab6468a6c2d55d665c651e84))
-* **release:** add the ability to create PR ([1662487](https://github.com/Payadel/README/commit/1662487c334b97a659a98880da40657441f509c0))
-
-
-### Documents
-
-* **contributing:** minor update ([593c8a6](https://github.com/Payadel/README/commit/593c8a6daf1e242d1316f59335495d78d02d64ee))
-* **readme:** update README.md ([8fea303](https://github.com/Payadel/README/commit/8fea30393d9020b62faaae1c76336bbfa6c25c56))
-
-
-### Development: CI/CD, Build, etc
-
-* **changelog:** remove push event from changelog.yaml action ([431f183](https://github.com/Payadel/README/commit/431f18377d3be495cc030d4eda057f531ff70700))
-* **dependabot:** add dependabot.yml ([7a12699](https://github.com/Payadel/README/commit/7a1269934f617b67e872d9d742c0d1b8ed4dffc9))
-* **labels:** fix permissions problem & update version ([3ec7b2b](https://github.com/Payadel/README/commit/3ec7b2b791e05785a7f034e4b1d9160cebef7687))
-* **lock-action:** add inputs for workflow_dispatch and update pr-lock-inactive-days to 15 ([5a893b0](https://github.com/Payadel/README/commit/5a893b0231a9f486eda1d55401a817788a4ac4af))
-* **pr-labels:** add disable_reviews input for pr-labels.yml GitHub action ([8ab5729](https://github.com/Payadel/README/commit/8ab5729b42eea76657b0fe545a3890f1724a1718))
-* **release:** update release_directory default & add PR ([4fd8f15](https://github.com/Payadel/README/commit/4fd8f150c913a9fd5d548778b56f45c6af6973d9))
-
-
-### Fixes
-
-* **changelog:** remove push event from changelog.yaml action ([09c6939](https://github.com/Payadel/README/commit/09c6939a931fa3f182f9a3e50b2b66d41e210d10))
-* **codeql:** the push event, which was activated by mistake, was disabled ([12cccc3](https://github.com/Payadel/README/commit/12cccc3c717c84c13f9643e605333b012e883c2c))
-* **docs:** remove "PROJECT_NAME" from docs. You don't need to look for "PROJECT_NAME" and change it! ([3f36969](https://github.com/Payadel/README/commit/3f369699a3c00bdd198cd6e05e9e7a6ade691899))
-* **labels:** fix permissions problem & update version ([fe08e20](https://github.com/Payadel/README/commit/fe08e20c725bb970a825a1b2c4f42626658c77ed))
-* **release:** change release_directory default to '.' ([4b9efe1](https://github.com/Payadel/README/commit/4b9efe1ab3cea572057f7354c667ed4cc0ece442))
-
-## [0.2.0](https://github.com/Payadel/README/compare/v0.1.3...v0.2.0) (2023-03-15)
-
-### ⚠ BREAKING CHANGES
-
-* **changelog:** remove push event from changelog.yaml action
-* **lock-action:** increase pr-lock-inactive-days from 1 to 15
-
-### Features
-
+* **codeql:** add helper link to
+  codeql.yml ([ceec48f](https://github.com/Payadel/README/commit/ceec48fd5948109edb4b6fa18a6e5b0ec9e74e62))
+* **dependabot:** add
+  dependabot.yml ([02b95f2](https://github.com/Payadel/README/commit/02b95f2e0d40fea2152f2e5ca5cb1d60a12402e5))
 * **lock-action:** add inputs for workflow_dispatch and update pr-lock-inactive-days to
   15 ([b2cd884](https://github.com/Payadel/README/commit/b2cd8841fe124f1723a636d7bb0e78bd9ef7ffc1))
 * **pr-labels:** add disable_reviews input for pr-labels.yml GitHub
   action ([afc6938](https://github.com/Payadel/README/commit/afc693846b4e5c72ab6468a6c2d55d665c651e84))
+* **release:** add the ability to create
+  PR ([1662487](https://github.com/Payadel/README/commit/1662487c334b97a659a98880da40657441f509c0))
 
 ### Fixes
 
@@ -66,6 +32,10 @@ All notable changes to this project will be documented in this file. See [standa
   disabled ([12cccc3](https://github.com/Payadel/README/commit/12cccc3c717c84c13f9643e605333b012e883c2c))
 * **docs:** remove "PROJECT_NAME" from docs. You don't need to look for "PROJECT_NAME" and change
   it! ([3f36969](https://github.com/Payadel/README/commit/3f369699a3c00bdd198cd6e05e9e7a6ade691899))
+* **labels:** fix permissions problem & update
+  version ([fe08e20](https://github.com/Payadel/README/commit/fe08e20c725bb970a825a1b2c4f42626658c77ed))
+* **release:** change release_directory default to '
+  .' ([4b9efe1](https://github.com/Payadel/README/commit/4b9efe1ab3cea572057f7354c667ed4cc0ece442))
 
 ### Documents
 
@@ -78,10 +48,16 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **changelog:** remove push event from changelog.yaml
   action ([431f183](https://github.com/Payadel/README/commit/431f18377d3be495cc030d4eda057f531ff70700))
+* **dependabot:** add
+  dependabot.yml ([7a12699](https://github.com/Payadel/README/commit/7a1269934f617b67e872d9d742c0d1b8ed4dffc9))
+* **labels:** fix permissions problem & update
+  version ([3ec7b2b](https://github.com/Payadel/README/commit/3ec7b2b791e05785a7f034e4b1d9160cebef7687))
 * **lock-action:** add inputs for workflow_dispatch and update pr-lock-inactive-days to
   15 ([5a893b0](https://github.com/Payadel/README/commit/5a893b0231a9f486eda1d55401a817788a4ac4af))
 * **pr-labels:** add disable_reviews input for pr-labels.yml GitHub
   action ([8ab5729](https://github.com/Payadel/README/commit/8ab5729b42eea76657b0fe545a3890f1724a1718))
+* **release:** update release_directory default & add
+  PR ([4fd8f15](https://github.com/Payadel/README/commit/4fd8f150c913a9fd5d548778b56f45c6af6973d9))
 
 ### [0.1.3](https://github.com/Payadel/README/compare/v0.1.2...v0.1.3) (2023-03-14)
 

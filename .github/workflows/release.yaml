@@ -16,9 +16,14 @@ on:
         type: boolean
         default: true
         description: Skip generate changelog
+      create_pr_for_branch:
+        required: false
+        default: ''
+        description: Target branch? empty for skip.
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   default:
@@ -43,6 +48,7 @@ jobs:
           echo "release_directory: ${{ inputs.release_directory }}"
           echo "skip_changelog: ${{ inputs.skip_changelog }}"
           echo "version: ${{ inputs.version }}"
+          echo "create_pr_for_branch: ${{ inputs.create_pr_for_branch }}"
           echo "Current Branch: $(git rev-parse --abbrev-ref HEAD)"
 
       - name: Tag New Version
@@ -74,3 +80,10 @@ jobs:
           allowUpdates: true
           bodyFile: "CHANGELOG.md"
           tag: 'v${{ steps.tag_version.outputs.version }}'
+
+      - name: Prepare data for PR
+        run: |
+          current_branch=$(git rev-parse --abbrev-ref HEAD)
+          gh pr create -B ${{ inputs.create_pr_for_branch }} -H $current_branch --title "Merge $current_branch into ${{ inputs.create_pr_for_branch }}" --body "$(cat CHANGELOG.md)"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

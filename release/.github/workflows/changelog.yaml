@@ -1,9 +1,6 @@
 name: Changelog
 
 on:
-  push:
-    branches:
-      - dev
   workflow_dispatch:
     inputs:
       version:
@@ -15,7 +12,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  createPullRequest:
+  changelog:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

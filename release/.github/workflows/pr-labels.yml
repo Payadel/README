@@ -6,12 +6,21 @@ on:
     types: [ opened, labeled, unlabeled, synchronize ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+      disable_reviews:
+        type: boolean
+        required: false
+        default: true
+        description: Set to true to disable the creation on pull request reviews, and use the status of the check instead.
 
 jobs:
   pr_labels:
     name: 🏭 Verify
     runs-on: ubuntu-latest
     steps:
+      - name: Print inputs
+        run: |
+          echo "disable_reviews: ${{ inputs.disable_reviews }}"
+
       - name: 🏷 Verify PR has a valid label
         uses: jesusvasquez333/verify-pr-label-action@v1.4.0
         with:
@@ -25,4 +34,4 @@ jobs:
             status-duplicate, status-in-progress, status-stale, 
             status-incomplete, status-invalid, status-wontfix,
             good first issue, help-wanted
-          disable-reviews: true
+          disable-reviews: ${{ inputs.disable_reviews }}

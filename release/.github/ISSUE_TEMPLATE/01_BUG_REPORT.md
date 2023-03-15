@@ -6,7 +6,7 @@ assignees: ""
 
 # Bug Report
 
-**PROJECT_NAME version:**
+**Project version:**
 
 <!-- Please specify commit or tag version. -->
 

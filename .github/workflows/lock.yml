@@ -36,7 +36,7 @@ jobs:
           [[ ${{ inputs.issue_lock_inactive_days }} -lt 1 ]] && echo "issue_lock_inactive_days must more than 0"; exit 1
           [[ ${{ inputs.pr_lock_inactive_days }} -lt 1 ]] && echo "pr_lock_inactive_days must more than 0"; exit 1
 
-      - uses: dessant/lock-threads@v2.0.3
+      - uses: dessant/lock-threads@v4.0.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           issue-lock-inactive-days: ${{ inputs.issue_lock_inactive_days }}

@@ -18,7 +18,7 @@ on:
         description: Skip generate changelog
       create_pr_for_branch:
         required: false
-        default: ''
+        default: 'master'
         description: Target branch? empty for skip.
 
 permissions:
@@ -81,7 +81,8 @@ jobs:
           bodyFile: "CHANGELOG.md"
           tag: 'v${{ steps.tag_version.outputs.version }}'
 
-      - name: Prepare data for PR
+      - name: Create Pull Request
+        if: ${{ inputs.create_pr_for_branch != '' }}
         run: |
           current_branch=$(git rev-parse --abbrev-ref HEAD)
           gh pr create -B ${{ inputs.create_pr_for_branch }} -H $current_branch --title "Merge $current_branch into ${{ inputs.create_pr_for_branch }}" --body "$(cat CHANGELOG.md)"

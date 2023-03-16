@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/Payadel/README/compare/v0.2.1...v0.2.2) (2023-03-16)
+
+
+### Development: CI/CD, Build, etc
+
+* **release:** update release.yaml ([58ff82a](https://github.com/Payadel/README/commit/58ff82a3ab67aef66d4a5a168a84c36be9d04edc))
+
+
+### Fixes
+
+* **release:** add condition for 'Create Pull Request' step ([e98282d](https://github.com/Payadel/README/commit/e98282dfaddaec94717f4a4a7c3473779e204123))
+
 ### [0.2.1](https://github.com/Payadel/README/compare/v0.2.0...v0.2.1) (2023-03-16)
 
 

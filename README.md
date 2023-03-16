@@ -6,6 +6,13 @@ A template for a convenient and standard start of projects.
 - **GitHub actions** like auto-generate-changelog, release, labels, etc.
 - **Git hooks and evaluators** like pre-commit, commitlint, etc.
 
+## Simple Usage
+
+Run this script:
+```shell
+wget https://github.com/payadel/readme/releases/latest/download/release.zip; wait; unzip release.zip; wait; rm release.zip
+```
+
 ## Usage
 
 0. Preparation

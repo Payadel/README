@@ -1,41 +1,43 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file.
+See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 ### [0.2.2](https://github.com/Payadel/README/compare/v0.2.1...v0.2.2) (2023-03-16)
 
+### Fixes
+
+* **release:** add condition for 'Create Pull Request'
+  step ([e98282d](https://github.com/Payadel/README/commit/e98282dfaddaec94717f4a4a7c3473779e204123))
 
 ### Development: CI/CD, Build, etc
 
-* **release:** update release.yaml ([58ff82a](https://github.com/Payadel/README/commit/58ff82a3ab67aef66d4a5a168a84c36be9d04edc))
-
-
-### Fixes
-
-* **release:** add condition for 'Create Pull Request' step ([e98282d](https://github.com/Payadel/README/commit/e98282dfaddaec94717f4a4a7c3473779e204123))
+* **release:** update
+  release.yaml ([58ff82a](https://github.com/Payadel/README/commit/58ff82a3ab67aef66d4a5a168a84c36be9d04edc))
 
 ### [0.2.1](https://github.com/Payadel/README/compare/v0.2.0...v0.2.1) (2023-03-16)
 
-
 ### Features
 
-* **codeowner:** add CODEOWNERS ([60e7267](https://github.com/Payadel/README/commit/60e7267f1b3eaea87fe9c94e9e7340585df30bdf))
-
+* **codeowner:** add
+  CODEOWNERS ([60e7267](https://github.com/Payadel/README/commit/60e7267f1b3eaea87fe9c94e9e7340585df30bdf))
 
 ### Fixes
 
-* **dependabot:** set 'dev' as dependabot target branch ([92596be](https://github.com/Payadel/README/commit/92596be997adaef8bc1448d7d4f65f898be4c851))
-
+* **dependabot:** set 'dev' as dependabot target
+  branch ([92596be](https://github.com/Payadel/README/commit/92596be997adaef8bc1448d7d4f65f898be4c851))
 
 ### Documents
 
-* **readme:** add 'Simple Usage' section to README.md ([b6f3dbc](https://github.com/Payadel/README/commit/b6f3dbc67957043ee1dc1f81f8bea3fff58740f9))
-
+* **readme:** add 'Simple Usage' section to
+  README.md ([b6f3dbc](https://github.com/Payadel/README/commit/b6f3dbc67957043ee1dc1f81f8bea3fff58740f9))
 
 ### Development: CI/CD, Build, etc
 
-* **CODEOWNER:** add CODEOWNERS ([6579e7e](https://github.com/Payadel/README/commit/6579e7eb739d0120b69b560d5dfce82687beb190))
-* **dependabot:** set 'dev' as dependabot target branch ([1e69f20](https://github.com/Payadel/README/commit/1e69f201c0ff052bec9a20a15967cc919f62e257))
+* **CODEOWNER:** add
+  CODEOWNERS ([6579e7e](https://github.com/Payadel/README/commit/6579e7eb739d0120b69b560d5dfce82687beb190))
+* **dependabot:** set 'dev' as dependabot target
+  branch ([1e69f20](https://github.com/Payadel/README/commit/1e69f201c0ff052bec9a20a15967cc919f62e257))
 
 ## [0.2.0](https://github.com/Payadel/README/compare/v0.1.3...v0.2.0) (2023-03-15)
 

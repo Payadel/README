@@ -32,13 +32,13 @@ jobs:
         run: |
           npm install -g standard-version
           
-          if [ ! -z "${{ inputs.version }}" ]; then npm run version:as ${{ inputs.version }}; fi
-          
-          command="release -- --skip.tag --skip.commit"
+          if [ ! -z "${{ inputs.version }}" ]; then standard-version --skip.changelog --skip.tag --skip.commit --release-as ${{ inputs.version }}; fi
+     
+          command="standard-version --skip.tag --skip.commit"
           if [ ! -z "${{ inputs.version }}" ]; then command="$command --skip.bump"; fi
           
-          echo "npm run $command..."
-          npm run $command
+          echo "$command..."
+          $command
           
           git add CHANGELOG.md
           git checkout -- package.json

@@ -1,7 +1,15 @@
 ---
-name: Bug Report about: Create a report to help PROJECT_NAME to improve title: "bug: "
-labels: "bug"
+
+name: Bug Report
+
+about: Create a report to improve
+
+title: "bug: "
+
+labels: "scope-bug"
+
 assignees: ""
+
 ---
 
 # Bug Report

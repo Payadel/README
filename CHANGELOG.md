@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/Payadel/README/compare/v0.2.2...v0.2.3) (2023-03-17)
+
+### Fixes
+
+* **codeql:** add helper
+  comments ([3301853](https://github.com/Payadel/README/commit/330185385660fd5c73a446deaab74cfde61379e5))
+* **Issue Templates:** update names & titles, fix labels, fix
+  lines, ([2e99bb5](https://github.com/Payadel/README/commit/2e99bb59f9d4081d5eda180d1716844f0b3b2297))
+
+### Documents
+
+* **issue:** update issue
+  templates ([795c437](https://github.com/Payadel/README/commit/795c43791f28e899ced73557afd87bec625e0afe))
+
 ### [0.2.2](https://github.com/Payadel/README/compare/v0.2.1...v0.2.2) (2023-03-16)
 
 ### Fixes

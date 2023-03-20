@@ -27,36 +27,18 @@ jobs:
           echo "version: ${{ inputs.version }}"
           echo "Current Branch: $(git rev-parse --abbrev-ref HEAD)"
 
-      - name: Create Changelog
-        id: create_changelog
-        run: |
-          npm install -g standard-version
-          
-          if [ ! -z "${{ inputs.version }}" ]; then standard-version --skip.changelog --skip.tag --skip.commit --release-as ${{ inputs.version }}; fi
-     
-          command="standard-version --skip.tag --skip.commit"
-          if [ ! -z "${{ inputs.version }}" ]; then command="$command --skip.bump"; fi
-          
-          echo "$command..."
-          $command
-          
-          git add CHANGELOG.md
-          git checkout -- package.json
-          version=$(cat CHANGELOG.md | grep -o -E '[0-9]+\.[0-9]+\.[0-9]' | sed -n '1p')
-          echo "version=$version" >> $GITHUB_OUTPUT
-
-      - name: Read changelog
-        uses: mathiasvr/command-output@v1
-        id: changelog_data
+      - name: Run Action
+        uses: payadel/changelog-sv-action@v0.0.1
+        id: changelog
         with:
-          run: cat CHANGELOG.md
+          version: ${{ inputs.version }}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: "chore(changelog): update CHANGELOG.md for v${{ steps.create_changelog.outputs.version }}"
+          commit-message: "chore(changelog): update CHANGELOG.md for v${{ steps.changelog.outputs.version }}"
           branch: changelog
           delete-branch: true
-          title: 'Changelog v${{ steps.create_changelog.outputs.version }}'
-          body: ${{ steps.changelog_data.outputs.stdout }}
+          title: 'Changelog v${{ steps.changelog.outputs.version }}'
+          body: ${{ steps.changelog.outputs.changelog }}
           assignees: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>

@@ -38,9 +38,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
 
       - name: Print inputs
         run: |
@@ -51,26 +48,17 @@ jobs:
           echo "create_pr_for_branch: ${{ inputs.create_pr_for_branch }}"
           echo "Current Branch: $(git rev-parse --abbrev-ref HEAD)"
 
-      - name: Tag New Version
-        id: tag_version
-        run: |
-          git config --global user.email "github-action@github.com"
-          git config --global user.name "Github Action"
-          npm install -g standard-version
-          
-          if [ -z "${{ inputs.version }}" ]; then release_command="standard-version"; else release_command="standard-version --release-as ${{ inputs.version }}"; fi
-          
-          if [ ${{ inputs.skip_changelog }} == true ]; then $release_command --skip.changelog; else $release_command; fi
-          
-          version=$(node -p -e "require('./package.json').version")
-          echo "version=$version" >> $GITHUB_OUTPUT
-          echo "New Version: $version"
-          
-          git push --follow-tags origin $(git rev-parse --abbrev-ref HEAD)
-
-      - name: create release file
-        run: |
-          (cd ${{ inputs.release_directory }} && zip -r "$(git rev-parse --show-toplevel)/${{ inputs.release_file_name }}.zip" .)
+      - name: Release
+        uses: Payadel/release-sv-action@v0.0.3
+        id: release
+        with:
+          version: ${{ inputs.version }}
+          skip-changelog: ${{ inputs.skip_changelog }}
+          release_directory: ${{ inputs.release_directory }}
+          release_file_name: ${{ inputs.release_file_name }}
+          create_pr_for_branch: ${{ inputs.create_pr_for_branch }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: GitHub Release
         uses: ncipollo/release-action@v1
@@ -79,12 +67,4 @@ jobs:
           artifactErrorsFailBuild: true
           allowUpdates: true
           bodyFile: "CHANGELOG.md"
-          tag: 'v${{ steps.tag_version.outputs.version }}'
-
-      - name: Create Pull Request
-        if: ${{ inputs.create_pr_for_branch != '' }}
-        run: |
-          current_branch=$(git rev-parse --abbrev-ref HEAD)
-          gh pr create -B ${{ inputs.create_pr_for_branch }} -H $current_branch --title "Merge $current_branch into ${{ inputs.create_pr_for_branch }}" --body "$(cat CHANGELOG.md)"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag: 'v${{ steps.release.outputs.version }}'

@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/Payadel/README/compare/v0.2.3...v0.2.4) (2023-03-21)
+
+### Fixes
+
+* **changelog:** use payadel/changelog-sv-action in
+  changelog.yaml ([fe77edf](https://github.com/Payadel/README/commit/fe77edf2bfa4b327ab1dd725e817a44f5fb9d546))
+* **release:** use Payadel/release-sv-action@v0.0.2 for
+  release ([f61fe5b](https://github.com/Payadel/README/commit/f61fe5bed9442775b81d04681963fe9d945d8205))
+* update action
+  dependencies ([524e955](https://github.com/Payadel/README/commit/524e95514443aa6322aec8aa184ed9e1548b22da))
+* update Payadel/release-sv-action from 0.0.2 to 0.0.3
+
+### Development: CI/CD, Build, etc
+
+* **changelog:** use
+  payadel/changelog-sv-action ([8df07c6](https://github.com/Payadel/README/commit/8df07c6fffaf5e6b80a93d65569526e7aac72382))
+* **changelog:** minor
+  updates ([f5031f5](https://github.com/Payadel/README/commit/f5031f55380035ee41da1f6463a496154e6b436f))
+* **release:** use Payadel/release-sv-action@v0.0.2 for
+  release ([5859ad6](https://github.com/Payadel/README/commit/5859ad668f8996ea45f7d818f20d02a386b14dee))
+
 ### [0.2.3](https://github.com/Payadel/README/compare/v0.2.2...v0.2.3) (2023-03-17)
 
 ### Fixes

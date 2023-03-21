@@ -13,6 +13,7 @@ See [standard-version](https://github.com/conventional-changelog/standard-versio
   release ([f61fe5b](https://github.com/Payadel/README/commit/f61fe5bed9442775b81d04681963fe9d945d8205))
 * update action
   dependencies ([524e955](https://github.com/Payadel/README/commit/524e95514443aa6322aec8aa184ed9e1548b22da))
+* update Payadel/release-sv-action from 0.0.2 to 0.0.3
 
 ### Development: CI/CD, Build, etc
 

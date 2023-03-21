@@ -51,26 +51,14 @@ jobs:
           echo "create_pr_for_branch: ${{ inputs.create_pr_for_branch }}"
           echo "Current Branch: $(git rev-parse --abbrev-ref HEAD)"
 
-      - name: Tag New Version
-        id: tag_version
-        run: |
-          git config --global user.email "github-action@github.com"
-          git config --global user.name "Github Action"
-          npm install -g standard-version
-          
-          if [ -z "${{ inputs.version }}" ]; then release_command="standard-version"; else release_command="standard-version --release-as ${{ inputs.version }}"; fi
-          
-          if [ ${{ inputs.skip_changelog }} == true ]; then $release_command --skip.changelog; else $release_command; fi
-          
-          version=$(node -p -e "require('./package.json').version")
-          echo "version=$version" >> $GITHUB_OUTPUT
-          echo "New Version: $version"
-          
-          git push --follow-tags origin $(git rev-parse --abbrev-ref HEAD)
-
-      - name: create release file
-        run: |
-          (cd ${{ inputs.release_directory }} && zip -r "$(git rev-parse --show-toplevel)/${{ inputs.release_file_name }}.zip" .)
+      - name: Release
+        uses: Payadel/release-sv-action@v0.0.2
+        with:
+          version: ${{ inputs.version }}
+          skip-changelog: ${{ inputs.skip_changelog }}
+          release_directory: ${{ inputs.release_directory }}
+          release_file_name: ${{ inputs.release_file_name }}
+          create_pr_for_branch: ${{ inputs.create_pr_for_branch }}
 
       - name: GitHub Release
         uses: ncipollo/release-action@v1

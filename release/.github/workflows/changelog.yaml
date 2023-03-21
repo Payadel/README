@@ -18,16 +18,13 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
 
       - name: Print & Validate inputs
         run: |
           echo "version: ${{ inputs.version }}"
           echo "Current Branch: $(git rev-parse --abbrev-ref HEAD)"
 
-      - name: Run Action
+      - name: Run Changelog
         uses: payadel/changelog-sv-action@v0.0.1
         id: changelog
         with:

@@ -38,9 +38,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
 
       - name: Print inputs
         run: |
@@ -53,12 +50,15 @@ jobs:
 
       - name: Release
         uses: Payadel/release-sv-action@v0.0.2
+        id: release
         with:
           version: ${{ inputs.version }}
           skip-changelog: ${{ inputs.skip_changelog }}
           release_directory: ${{ inputs.release_directory }}
           release_file_name: ${{ inputs.release_file_name }}
           create_pr_for_branch: ${{ inputs.create_pr_for_branch }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: GitHub Release
         uses: ncipollo/release-action@v1
@@ -67,12 +67,4 @@ jobs:
           artifactErrorsFailBuild: true
           allowUpdates: true
           bodyFile: "CHANGELOG.md"
-          tag: 'v${{ steps.tag_version.outputs.version }}'
-
-      - name: Create Pull Request
-        if: ${{ inputs.create_pr_for_branch != '' }}
-        run: |
-          current_branch=$(git rev-parse --abbrev-ref HEAD)
-          gh pr create -B ${{ inputs.create_pr_for_branch }} -H $current_branch --title "Merge $current_branch into ${{ inputs.create_pr_for_branch }}" --body "$(cat CHANGELOG.md)"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag: 'v${{ steps.release.outputs.version }}'

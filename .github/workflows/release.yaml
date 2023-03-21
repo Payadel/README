@@ -50,7 +50,7 @@ jobs:
 
       - name: Release
         id: release
-        uses: Payadel/release-sv-action@v0.0.3
+        uses: Payadel/release-sv-action@v0.0.4
         with:
           version: ${{ inputs.version }}
           skip-changelog: ${{ inputs.skip_changelog }}

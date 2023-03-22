@@ -1,7 +1,18 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
-See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.2.6](https://github.com/Payadel/README/compare/v0.2.5...v0.2.6) (2023-03-22)
+
+
+### Fixes
+
+* **release:** update Payadel/release-sv-action to 0.2.1 ([8adb436](https://github.com/Payadel/README/commit/8adb4365ae2d3b35248fbd9864d764bcc2bfdc28))
+
+
+### Development: CI/CD, Build, etc
+
+* **release:** update Payadel/release-sv-action to 0.2.1 ([60944ae](https://github.com/Payadel/README/commit/60944ae7e4852e1044eb69e6a816cd5e63b85b93))
 
 ### [0.2.5](https://github.com/Payadel/README/compare/v0.2.4...v0.2.5) (2023-03-21)
 

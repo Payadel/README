@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.7](https://github.com/Payadel/README/compare/v0.2.6...v0.2.7) (2023-03-30)
+
+
+### Features
+
+* **makefile:** add help command for Makefile ([d460166](https://github.com/Payadel/README/commit/d46016661c3d85a3f093deba96a0bc4537a49aac))
+* **makefile:** add Makefile for run scripts ([ca3a36e](https://github.com/Payadel/README/commit/ca3a36e026193700435a7e76c727ac1f94164b84))
+
+
+### Development: CI/CD, Build, etc
+
+* add Makefile ([35011ce](https://github.com/Payadel/README/commit/35011ce5dd58f74004c0b9c7d67c2ed379ee1605))
+
 ### [0.2.6](https://github.com/Payadel/README/compare/v0.2.5...v0.2.6) (2023-03-22)
 
 

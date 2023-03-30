@@ -2,12 +2,12 @@
 
 # Variables
 REF := $(if $(ref),$(ref),"dev")
-SKIP_RELEASE_FILE := $(if $(skip_release_file),$(skip_release_file),true)
+SKIP_RELEASE_FILE := $(if $(skip_release_file),$(skip_release_file),false)
 RELEASE_FILE_NAME := $(if $(release_file_name),$(release_file_name),"release")
-RELEASE_DIRECTORY := $(if $(release_directory),$(release_directory),".")
+RELEASE_DIRECTORY := $(if $(release_directory),$(release_directory),"release")
 VERSION := $(if $(version),$(version),"")
 SKIP_CHANGELOG := $(if $(skip_changelog),$(skip_changelog),true)
-CREATE_PR_FOR_BRANCH := $(if $(create_pr_for_branch),$(create_pr_for_branch),"")
+CREATE_PR_FOR_BRANCH := $(if $(create_pr_for_branch),$(create_pr_for_branch),"master")
 
 # Targets for running workflow commands
 watch-actions: ## Watch a run until it completes, showing its progress

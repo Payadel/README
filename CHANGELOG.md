@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.8](https://github.com/Payadel/README/compare/v0.2.7...v0.2.8) (2023-04-04)
+
+
+### Development: CI/CD, Build, etc
+
+* **lock:** fix default inputs when action execute on `schedule` ([ae852b9](https://github.com/Payadel/README/commit/ae852b9b9fa307e7212024d6ce8c5a0001b59573))
+* **lock:** update lock action from v2.0.3 to v4.0.0 ([66c9c05](https://github.com/Payadel/README/commit/66c9c05500ed7450246163aa19dcf0775ee5bf02))
+
+
+### Fixes
+
+* **lock:** fix default inputs when action execute on `schedule` ([d3e2eeb](https://github.com/Payadel/README/commit/d3e2eebf64fd9ccf0f6f7978194964c9952ad4dc))
+
 ### [0.2.7](https://github.com/Payadel/README/compare/v0.2.6...v0.2.7) (2023-03-30)
 
 

@@ -1,15 +1,30 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file.
+See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.2.8](https://github.com/Payadel/README/compare/v0.2.7...v0.2.8) (2023-04-04)
+
+### Fixes
+
+* **lock:** fix default inputs when action execute
+  on `schedule` ([d3e2eeb](https://github.com/Payadel/README/commit/d3e2eebf64fd9ccf0f6f7978194964c9952ad4dc))
+
+### Development: CI/CD, Build, etc
+
+* **lock:** fix default inputs when action execute
+  on `schedule` ([ae852b9](https://github.com/Payadel/README/commit/ae852b9b9fa307e7212024d6ce8c5a0001b59573))
+* **lock:** update lock action from v2.0.3 to
+  v4.0.0 ([66c9c05](https://github.com/Payadel/README/commit/66c9c05500ed7450246163aa19dcf0775ee5bf02))
 
 ### [0.2.7](https://github.com/Payadel/README/compare/v0.2.6...v0.2.7) (2023-03-30)
 
-
 ### Features
 
-* **makefile:** add help command for Makefile ([d460166](https://github.com/Payadel/README/commit/d46016661c3d85a3f093deba96a0bc4537a49aac))
-* **makefile:** add Makefile for run scripts ([ca3a36e](https://github.com/Payadel/README/commit/ca3a36e026193700435a7e76c727ac1f94164b84))
-
+* **makefile:** add help command for
+  Makefile ([d460166](https://github.com/Payadel/README/commit/d46016661c3d85a3f093deba96a0bc4537a49aac))
+* **makefile:** add Makefile for run
+  scripts ([ca3a36e](https://github.com/Payadel/README/commit/ca3a36e026193700435a7e76c727ac1f94164b84))
 
 ### Development: CI/CD, Build, etc
 
@@ -17,15 +32,15 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.2.6](https://github.com/Payadel/README/compare/v0.2.5...v0.2.6) (2023-03-22)
 
-
 ### Fixes
 
-* **release:** update Payadel/release-sv-action to 0.2.1 ([8adb436](https://github.com/Payadel/README/commit/8adb4365ae2d3b35248fbd9864d764bcc2bfdc28))
-
+* **release:** update Payadel/release-sv-action to
+  0.2.1 ([8adb436](https://github.com/Payadel/README/commit/8adb4365ae2d3b35248fbd9864d764bcc2bfdc28))
 
 ### Development: CI/CD, Build, etc
 
-* **release:** update Payadel/release-sv-action to 0.2.1 ([60944ae](https://github.com/Payadel/README/commit/60944ae7e4852e1044eb69e6a816cd5e63b85b93))
+* **release:** update Payadel/release-sv-action to
+  0.2.1 ([60944ae](https://github.com/Payadel/README/commit/60944ae7e4852e1044eb69e6a816cd5e63b85b93))
 
 ### [0.2.5](https://github.com/Payadel/README/compare/v0.2.4...v0.2.5) (2023-03-21)
 

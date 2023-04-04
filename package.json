@@ -1,5 +1,5 @@
 {
-  "version": "0.2.7",
+  "version": "0.2.8",
   "scripts": {
     "actions:watch": "gh run watch && notify-send \"run is done!\"",
     "actions:release": "gh workflow run Release --ref dev -f version=''",

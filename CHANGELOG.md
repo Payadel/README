@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.10](https://github.com/Payadel/README/compare/v0.2.9...v0.2.10) (2023-04-22)
+
+
+### Development: CI/CD, Build, etc
+
+* **deps:** bump peter-evans/create-pull-request from 4 to 5 ([b84e847](https://github.com/Payadel/README/commit/b84e8478b7e5ce5df9e14415070ff179b0d4a43f))
+
 ### [0.2.9](https://github.com/Payadel/README/compare/v0.2.8...v0.2.9) (2023-04-04)
 
 

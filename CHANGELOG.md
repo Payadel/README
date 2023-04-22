@@ -1,7 +1,25 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
-See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.2.10](https://github.com/Payadel/README/compare/v0.2.9...v0.2.10) (2023-04-22)
+
+
+### Development: CI/CD, Build, etc
+
+* **deps:** bump peter-evans/create-pull-request from 4 to 5 ([b84e847](https://github.com/Payadel/README/commit/b84e8478b7e5ce5df9e14415070ff179b0d4a43f))
+
+### [0.2.9](https://github.com/Payadel/README/compare/v0.2.8...v0.2.9) (2023-04-04)
+
+
+### Development: CI/CD, Build, etc
+
+* **lock:** fix lock.yml ([1ebd0fc](https://github.com/Payadel/README/commit/1ebd0fca05117def5866e8268115e1dfa604d388))
+
+
+### Fixes
+
+* **lock:** fix lock.yml ([cdbb4f7](https://github.com/Payadel/README/commit/cdbb4f750e40f70d0886e0d67ae9f8d9d204f465))
 
 ### [0.2.8](https://github.com/Payadel/README/compare/v0.2.7...v0.2.8) (2023-04-04)
 

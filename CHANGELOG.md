@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/Payadel/README/compare/v0.2.11...v0.3.0) (2023-05-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove lock.yml
+
+### Development: CI/CD, Build, etc
+
+* **deps:** bump payadel/changelog-sv-action from 0.0.1 to 0.0.4 ([38ba75d](https://github.com/Payadel/README/commit/38ba75d57bac4b8b6d0e23b00b1e1e9a78b5a174))
+* update actions ([b201553](https://github.com/Payadel/README/commit/b2015536495fc74a86a9895d13793d66447f0e29))
+* update changelog.yaml ([2a86248](https://github.com/Payadel/README/commit/2a86248f9ec31c78e9283c072da65184ee4d4ba6))
+
+
+### Fixes
+
+* remove lock.yml ([29925ad](https://github.com/Payadel/README/commit/29925ad2a36d84d5310d757bd76641f7395b4c44))
+* update `payadel/changelog-sv-action` in `changelog.yaml` ([2165b29](https://github.com/Payadel/README/commit/2165b29355102f63ee19b988c5aca32f871eb373))
+* update `release-sv-action` version ([cca30df](https://github.com/Payadel/README/commit/cca30df2d01a561ce96731aab97ff5dca23a7b67))
+
 ### [0.2.11](https://github.com/Payadel/README/compare/v0.2.10...v0.2.11) (2023-04-22)
 
 

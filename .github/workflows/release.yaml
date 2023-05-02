@@ -3,15 +3,13 @@ name: Release
 on:
   workflow_dispatch:
     inputs:
-      release_file_name:
-        required: true
-        default: 'release'
-      release_directory:
-        required: true
-        default: 'release'
       version:
         required: false
         default: ''
+      create-pr-for-branch:
+        required: false
+        default: 'master'
+        description: Target branch? empty for skip.
       generate-changelog:
         type: choice
         default: auto
@@ -19,10 +17,6 @@ on:
           - never
           - always
           - auto
-      create_pr_for_branch:
-        required: false
-        default: 'master'
-        description: Target branch? empty for skip.
 
 permissions:
   contents: write
@@ -44,22 +38,20 @@ jobs:
 
       - name: Print inputs
         run: |
-          echo "release_file_name: ${{ inputs.release_file_name }}"
-          echo "release_directory: ${{ inputs.release_directory }}"
-          echo "generate-changelog: ${{ inputs.generate-changelog }}"
           echo "version: ${{ inputs.version }}"
-          echo "create_pr_for_branch: ${{ inputs.create_pr_for_branch }}"
+          echo "create-pr-for-branch: ${{ inputs.create-pr-for-branch }}"
+          echo "generate-changelog: ${{ inputs.generate-changelog }}"
           echo "Current Branch: $(git rev-parse --abbrev-ref HEAD)"
 
       - uses: Payadel/release-sv-action@v0.3.1
         id: release
         with:
-          skip-release-file: false
-          release-directory: ${{ inputs.release_directory }}
-          release-file-name: ${{ inputs.release_file_name }}
           version: ${{ inputs.version }}
+          create-pr-for-branch: ${{ inputs.create-pr-for-branch }}
           generate-changelog: ${{ inputs.generate-changelog }}
-          create-pr-for-branch: ${{ inputs.create_pr_for_branch }}
+          skip-release-file: false
+          release-file-name: 'release'
+          release-directory: 'release'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

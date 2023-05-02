@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.11](https://github.com/Payadel/README/compare/v0.2.10...v0.2.11) (2023-04-22)
+
+
+### Fixes
+
+* fix ISSUE_TEMPLATE names in README.md ([7e99c07](https://github.com/Payadel/README/commit/7e99c0769ec7b1639527143c13fcbe5d2d9168e3))
+
 ### [0.2.10](https://github.com/Payadel/README/compare/v0.2.9...v0.2.10) (2023-04-22)
 
 

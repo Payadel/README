@@ -2,8 +2,6 @@
 
 # Variables
 REF := $(if $(ref),$(ref),"dev")
-RELEASE_FILE_NAME := $(if $(release_file_name),$(release_file_name),"release")
-RELEASE_DIRECTORY := $(if $(release_directory),$(release_directory),"release")
 VERSION := $(if $(version),$(version),"")
 GENERATE_CHANGELOG := $(if $(generate-changelog),$(generate-changelog),'auto')
 CREATE_PR_FOR_BRANCH := $(if $(create_pr_for_branch),$(create_pr_for_branch),"master")
@@ -13,7 +11,7 @@ watch-actions: ## Watch a run until it completes, showing its progress
 	gh run watch; notify-send "run is done!"
 
 release-action: ## Run release action
-	gh workflow run Release --ref $(REF) release_file_name=$(RELEASE_FILE_NAME) -f release_directory=$(RELEASE_DIRECTORY) -f generate-changelog=$(GENERATE_CHANGELOG) -f version=$(VERSION) -f create_pr_for_branch=$(CREATE_PR_FOR_BRANCH)
+	gh workflow run Release --ref $(REF) -f generate-changelog=$(GENERATE_CHANGELOG) -f version=$(VERSION) -f create_pr_for_branch=$(CREATE_PR_FOR_BRANCH)
 
 changelog-action: ## Run changelog action
 	gh workflow run Changelog --ref $(REF) -f version=$(VERSION)

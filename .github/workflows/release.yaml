@@ -53,9 +53,9 @@ jobs:
       - uses: Payadel/release-sv-action@v0.3.1
         id: release
         with:
-          version: ${{ steps.inputs.outputs .version }}
-          create-pr-for-branch: ${{ steps.inputs.outputs .create-pr-for-branch }}
-          generate-changelog: ${{ steps.inputs.outputs .generate-changelog }}
+          version: ${{ steps.inputs.outputs.version }}
+          create-pr-for-branch: ${{ steps.inputs.outputs.create-pr-for-branch }}
+          generate-changelog: ${{ steps.inputs.outputs.generate-changelog }}
           skip-release-file: false
           release-file-name: 'release'
           release-directory: 'release'

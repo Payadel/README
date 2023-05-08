@@ -48,7 +48,7 @@ jobs:
             - name: generate-changelog
               default: 'auto'
             - name: current-branch-name
-              default: '$(git rev-parse --abbrev-ref HEAD)'
+              default: "$(git rev-parse --abbrev-ref HEAD)"
 
       - uses: Payadel/release-sv-action@v0.3.1
         id: release

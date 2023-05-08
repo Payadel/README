@@ -4,14 +4,14 @@
 REF := $(if $(ref),$(ref),"dev")
 VERSION := $(if $(version),$(version),"")
 GENERATE_CHANGELOG := $(if $(generate-changelog),$(generate-changelog),'auto')
-CREATE_PR_FOR_BRANCH := $(if $(create_pr_for_branch),$(create_pr_for_branch),"master")
+CREATE_PR_FOR_BRANCH := $(if $(create-pr-for-branch),$(create-pr-for-branch),"master")
 
 # Targets for running workflow commands
 watch-actions: ## Watch a run until it completes, showing its progress
 	gh run watch; notify-send "run is done!"
 
 release-action: ## Run release action
-	gh workflow run Release --ref $(REF) -f generate-changelog=$(GENERATE_CHANGELOG) -f version=$(VERSION) -f create_pr_for_branch=$(CREATE_PR_FOR_BRANCH)
+	gh workflow run Release --ref $(REF) -f generate-changelog=$(GENERATE_CHANGELOG) -f version=$(VERSION) -f create-pr-for-branch=$(CREATE_PR_FOR_BRANCH)
 
 changelog-action: ## Run changelog action
 	gh workflow run Changelog --ref $(REF) -f version=$(VERSION)

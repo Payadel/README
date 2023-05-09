@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/Payadel/README/compare/v0.3.0...v0.3.1) (2023-05-08)
+
+
+### Features
+
+* use `payadel/inputs` in actions ([6280425](https://github.com/Payadel/README/commit/6280425046f6db484d357ca1106c8e4e1f0c1633))
+
+
+### Development: CI/CD, Build, etc
+
+* fix release.yaml ([42bd52b](https://github.com/Payadel/README/commit/42bd52bb1d1b62f51853bc90bef93a0abc6b7c75))
+* match makefile with release.yml ([474d954](https://github.com/Payadel/README/commit/474d95481eee9bbd358242071f1ea7d97d669cde))
+* match makefile with release.yml ([86413ca](https://github.com/Payadel/README/commit/86413cae301068689867428cbca99d1b344848f3))
+* update release.yaml ([3fabc61](https://github.com/Payadel/README/commit/3fabc614e1506baab21062e2c1085ea2f1ffef84))
+* use `payadel/inputs` in actions ([8db6b3d](https://github.com/Payadel/README/commit/8db6b3da0d2803ed095e64ef93b2fb38e0e6a08d))
+
 ## [0.3.0](https://github.com/Payadel/README/compare/v0.2.11...v0.3.0) (2023-05-02)
 
 

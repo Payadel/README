@@ -56,7 +56,7 @@ jobs:
           fetch-depth: 0
 
       - name: Inputs
-        uses: payadel/inputs@v0.1.0
+        uses: payadel/inputs@v0.2.3
         id: inputs
         with:
           inputs: |

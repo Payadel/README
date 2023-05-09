@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/Payadel/README/compare/v0.3.1...v0.3.2) (2023-05-09)
+
+
+### Development: CI/CD, Build, etc
+
+* update `Payadel/inputs` version ([e73185a](https://github.com/Payadel/README/commit/e73185a1a3554e7202808a01ab8d35e1bb3e8809))
+
+
+### Fixes
+
+* **ci:** update `Payadel/inputs` version ([5c5e496](https://github.com/Payadel/README/commit/5c5e49680b5f25ab117dafa69f089c95890a3ce0))
+
 ### [0.3.1](https://github.com/Payadel/README/compare/v0.3.0...v0.3.1) (2023-05-08)
 
 

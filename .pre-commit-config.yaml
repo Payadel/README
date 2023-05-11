@@ -24,7 +24,7 @@ repos:
     hooks:
       - id: run-scripts
         name: document oriented
-        args: [ "-f=.git-hooks/document-oriented.py", "--source=src/*", "--doc=*.md" ]
+        args: [ "-f=.git-hooks/document-oriented.py", "--source=release/*", "--doc=README.md" ]
         stages: [ push ]
         pass_filenames: false
         verbose: false

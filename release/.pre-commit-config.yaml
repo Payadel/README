@@ -20,11 +20,13 @@ repos:
         stages: [ commit-msg ]
 
   - repo: https://github.com/Payadel/pre-commit-hooks
-    rev: v0.1.3
+    rev: v0.1.6  # Ensure it is latest
     hooks:
-      - id: run-scripts
-        name: document oriented
-        args: [ "-f=.git-hooks/document-oriented.py", "--source=src/*", "--doc=*.md" ]
-        stages: [ push ]
-        pass_filenames: false
-        verbose: false
+      - id: document-oriented
+        args: ['--doc=*.md', '--source=src/*']
+#      - id: run-scripts
+#        name: NAME
+#        args: [ "-f=path/to/script", "OTHER PARAMS" ]
+#        stages: [ push ]
+#        pass_filenames: false
+#        verbose: false

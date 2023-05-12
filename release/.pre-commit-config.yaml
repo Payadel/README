@@ -20,7 +20,7 @@ repos:
         stages: [ commit-msg ]
 
   - repo: https://github.com/Payadel/pre-commit-hooks
-    rev: v0.1.6  # Ensure it is latest
+    rev: v0.1.7  # Ensure it is latest
     hooks:
       - id: document-oriented
         args: ['--doc=*.md', '--source=src/*']

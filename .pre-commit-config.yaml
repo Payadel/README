@@ -20,7 +20,7 @@ repos:
         stages: [ commit-msg ]
 
   - repo: https://github.com/Payadel/pre-commit-hooks
-    rev: v0.1.6
+    rev: v0.1.7
     hooks:
       - id: document-oriented
         args: ['--doc=README.md', '--source=release/*']

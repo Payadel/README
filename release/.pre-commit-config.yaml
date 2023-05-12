@@ -5,14 +5,28 @@ repos:
       - id: commitlint
         stages: [ commit-msg ]
         args: [ "--config=.configs/commitlint.config.js" ]
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
       - id: no-commit-to-branch
         stages: [ prepare-commit-msg, merge-commit, push ]
         always_run: false
+
   - repo: https://github.com/mpalmer/action-validator
     rev: v0.5.1
     hooks:
       - id: action-validator
         stages: [ commit-msg ]
+
+  - repo: https://github.com/Payadel/pre-commit-hooks
+    rev: v0.1.7  # Ensure it is latest
+    hooks:
+      - id: document-oriented
+        args: ['--doc=*.md', '--source=src/*']
+#      - id: run-scripts
+#        name: NAME
+#        args: [ "-f=path/to/script", "OTHER PARAMS" ]
+#        stages: [ push ]
+#        pass_filenames: false
+#        verbose: false

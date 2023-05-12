@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.3](https://github.com/Payadel/README/compare/v0.3.2...v0.3.3) (2023-05-12)
+
+
+### Features
+
+* add document oriented git hook ([e9bda3c](https://github.com/Payadel/README/commit/e9bda3c0a776df269be19cb4fb3cb832b68866ec))
+* **readme:** add more badges ([d4cdc90](https://github.com/Payadel/README/commit/d4cdc9044bb0a747e0bc141227ddeecfa5f9eaa6))
+
+
+### Fixes
+
+* **pre-commit:** update `Payadel/pre-commit-hooks` version that fixes `document-oriented` ([27f8c55](https://github.com/Payadel/README/commit/27f8c5548894c2b6fe701a49faa8cd6a924179aa))
+* **pre-commit:** use  for ([2d5d641](https://github.com/Payadel/README/commit/2d5d6411348e68bc14f9b72e0dfdc5df1a87cc1f))
+
 ### [0.3.2](https://github.com/Payadel/README/compare/v0.3.1...v0.3.2) (2023-05-09)
 
 

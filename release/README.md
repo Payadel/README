@@ -20,10 +20,14 @@
 <div align="center">
 <br />
 
-![GitHub](https://img.shields.io/github/license/User/Repo)
+[![code with love by GITHUB_USERNAME](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-GITHUB_USERNAME-ff1414.svg?style=flat-square)](https://github.com/GITHUB_USERNAME)
+
+![Build Status](https://github.com/GITHUB_USERNAME/REPO_SLUG/actions/workflows/ACTION.yaml/badge.svg?branch=BRANCH)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/GITHUB_USERNAME/REPO_SLUG)
+
+![GitHub](https://img.shields.io/github/license/GITHUB_USERNAME/REPO_SLUG)
 
 [![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
-[![code with love by GITHUB_USERNAME](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-GITHUB_USERNAME-ff1414.svg?style=flat-square)](https://github.com/GITHUB_USERNAME)
 
 </div>
 
@@ -197,7 +201,7 @@ Please read [our contribution guidelines](docs/CONTRIBUTING.md), and thank you f
 
 ## Authors & contributors
 
-The original setup of this repository is by [FULL_NAME](https://github.com/GITHUB_USERNAME).
+The original setup of this repository is by [GITHUB_USERNAME](https://github.com/GITHUB_USERNAME).
 
 For a full list of all authors and contributors,
 see [the contributors page](https://github.com/GITHUB_USERNAME/REPO_SLUG/contributors).

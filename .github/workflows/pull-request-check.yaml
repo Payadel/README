@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v5
 
       - name: Print Configs
         run: cat .configs/.pre-commit-config-server.yaml

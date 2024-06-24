@@ -13,7 +13,7 @@ jobs:
       - name: Print commitlint.config.js
         run: cat .configs/commitlint.config.js
 
-      - uses: wagoid/commitlint-github-action@v5
+      - uses: wagoid/commitlint-github-action@v6
         with:
           configFile: .configs/commitlint.config.js
 

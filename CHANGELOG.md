@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.4](https://github.com/Payadel/README/compare/v0.3.3...v0.3.4) (2024-06-25)
+
+
+### Development: CI/CD, Build, etc
+
+* **deps-dev:** bump @action-validator/core from 0.5.4 to 0.6.0 ([45ee370](https://github.com/Payadel/README/commit/45ee370244bd32d17c20cecc5011a3eec940a463))
+* **deps:** bump actions/checkout from 2 to 4 ([3f8e050](https://github.com/Payadel/README/commit/3f8e050fda61e67b61c20df404601a5dfe63d636))
+* **deps:** bump actions/setup-python from 3 to 5 ([e69fd7f](https://github.com/Payadel/README/commit/e69fd7f86af44d3fa89bed9e2f642ca35fac557a))
+* **deps:** bump peter-evans/create-pull-request from 5 to 6 ([9b36446](https://github.com/Payadel/README/commit/9b364461eef2cf1c64fc3b36adabdc02dba734e2))
+* **deps:** bump pre-commit/action from 3.0.0 to 3.0.1 ([fa508bc](https://github.com/Payadel/README/commit/fa508bcdc6a629682481b808df812575b823d725))
+* **deps:** bump wagoid/commitlint-github-action from 5 to 6 ([0790c06](https://github.com/Payadel/README/commit/0790c0677b94f777ff6c4e35354804bfc92da80e))
+
 ### [0.3.3](https://github.com/Payadel/README/compare/v0.3.2...v0.3.3) (2023-05-12)
 
 

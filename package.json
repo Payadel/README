@@ -1,5 +1,5 @@
 {
-  "version": "0.3.3",
+  "version": "0.3.4",
   "scripts": {
     "actions:watch": "gh run watch && notify-send \"run is done!\"",
     "actions:release": "gh workflow run Release --ref dev -f version=''",
@@ -8,6 +8,6 @@
   },
   "devDependencies": {
     "@action-validator/cli": "^0.5.1",
-    "@action-validator/core": "^0.5.1"
+    "@action-validator/core": "^0.6.0"
   }
 }

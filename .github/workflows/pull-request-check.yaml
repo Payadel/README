@@ -11,12 +11,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Print commitlint.config.js
-        run: cat .configs/commitlint.config.js
+      - name: Print commitlint.config.mjs
+        run: cat .configs/commitlint.config.mjs
 
       - uses: wagoid/commitlint-github-action@v6
         with:
-          configFile: .configs/commitlint.config.js
+          configFile: .configs/commitlint.config.mjs
 
   pre-commit:
     runs-on: ubuntu-latest

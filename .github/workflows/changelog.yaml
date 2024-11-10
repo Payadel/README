@@ -15,7 +15,7 @@ jobs:
   changelog:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -26,7 +26,6 @@ jobs:
           inputs: |
             - name: version
               default: ''
-            - name: current-branch-name
               default: '$(git rev-parse --abbrev-ref HEAD)'
 
       - name: Run Changelog
@@ -36,7 +35,7 @@ jobs:
           version: ${{ steps.inputs.outputs.version }}
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v4
         with:
           commit-message: "chore(changelog): update CHANGELOG.md for v${{ steps.changelog.outputs.version }}"
           branch: changelog

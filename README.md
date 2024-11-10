@@ -1,123 +1,195 @@
-# Payadel README template
+<h1 align="center">
+  <a href="">
+    <img src="" alt="Logo" width="100" height="100">
+  </a>
+</h1>
 
-A template for a convenient and standard start of projects.
+<div align="center">
+  PROJECT_NAME
+  <br />
+  <a href="#getting-started"><strong>Getting Started »</strong></a>
+  <br />
+  <br />
+  <a href="https://github.com/GITHUB_USERNAME/REPO_SLUG/issues/new?assignees=&labels=bug&template=BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
+  ·
+  <a href="https://github.com/GITHUB_USERNAME/REPO_SLUG/issues/new?assignees=&labels=enhancement&template=FEATURE_REQUEST.md&title=feat%3A+">Request a Feature</a>
+  .
+  <a href="https://github.com/GITHUB_USERNAME/REPO_SLUG/issues/new?assignees=&labels=question&template=SUPPORT_QUESTION.md&title=support%3A+">Ask a Question</a>
+</div>
 
-- **Documents** like readme, issue/pull-request template, contributing, changelog, etc.
-- **GitHub actions** like auto-generate-changelog, release, labels, etc.
-- **Git hooks and evaluators** like pre-commit, commitlint, etc.
+<div align="center">
+<br />
 
-## Simple Usage
+[![code with love by GITHUB_USERNAME](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-GITHUB_USERNAME-ff1414.svg?style=flat-square)](https://github.com/GITHUB_USERNAME)
 
-Run this script:
-```shell
-wget https://github.com/payadel/readme/releases/latest/download/release.zip; wait; unzip release.zip; wait; rm release.zip
-```
+![Build Status](https://github.com/GITHUB_USERNAME/REPO_SLUG/actions/workflows/ACTION.yaml/badge.svg?branch=BRANCH)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/GITHUB_USERNAME/REPO_SLUG)
+
+![GitHub](https://img.shields.io/github/license/GITHUB_USERNAME/REPO_SLUG)
+
+[![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+
+</div>
+
+<details>
+<summary>Table of Contents</summary>
+
+- [About](#about)
+    - [Demo](#demo)
+    - [Built With](#built-with)
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+- [Usage](#usage)
+    - [Documentation](#documentation)
+- [Known issues](#known-issues)
+- [CHANGELOG](#changelog)
+- [Features](#features)
+- [Roadmap](#roadmap)
+- [Support](#support)
+- [Used By](#used-by)
+- [FAQ](#faq)
+- [Project assistance](#project-assistance)
+- [Contributing](#contributing)
+- [Authors & contributors](#authors--contributors)
+- [Security](#security)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Related](#related)
+
+</details>
+
+## About
+
+> **[?]**
+> Provide general information about your project here.
+> Put a meaningful, short, plain-language description of:
+> What problem does it (intend to) solve?
+> What is the purpose of your project?
+> What this project is trying to accomplish and why it matters?
+> Why did you undertake it?
+> Describe the problem(s) this project solves.
+> Describe how this software can improve the lives of its audience.
+> Describe what sets this apart from related-projects.
+> You don't have to answer all the questions -- just the ones relevant to your project.
+
+### Demo
+
+**Screenshot**: If the software has visual components, place a screenshot after the description; e.g.,
+
+<details>
+<summary>Screenshots</summary>
+<br>
+
+> **[?]**
+> Please provide your screenshots here.
+
+|                               Home Page                               |                               Login Page                               |
+| :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
+| <img src="docs/images/screenshot.png" title="Home Page" width="100%"> | <img src="docs/images/screenshot.png" title="Login Page" width="100%"> |
+
+</details>
+
+### Built With
+
+> **[?]**
+> Please provide the technologies that are used in the project.
+
+**Client:** React, Redux, TailwindCSS
+
+**Server:** Node, Express
+
+## Getting Started
+
+### Prerequisites
+
+> **[?]**
+> What are the project requirements/dependencies?
+> Describe any dependencies that must be installed for this software to work. This includes programming languages, databases or other storage mechanisms, build tools, frameworks, and so forth. If specific versions of other software are required, or known not to work, call that out.
+
+### Installation
+
+> **[?]**
+> Describe how to install and get started with the project.
+> Detailed instructions on how to install, configure, and get the project running. This should be frequently tested to ensure reliability. Alternatively, link to a separate [INSTALL](INSTALL.md) document.
 
 ## Usage
 
-0. Preparation
+> **[?]**
+> How does one go about using it?
+> Provide various use cases and code examples here.
 
-Make sure you are on an unprotected branch (eg `dev` branch).
+```javascript
+import Component from 'my-project'
 
-In this template, the `main` branch (or `master`) is protected by default. This means that there is no permission to
-commit, merge or push in these branches. Of course, you can change the rules **whenever you want**.
-
-1. Download Template
-
-> Note: we use `wget` tool to download the template file. You can install wget or use other tools (including direct download).
-
-For download the **latest** version:
-
-```shell
-wget https://github.com/payadel/readme/releases/latest/download/release.zip
+function App() {
+    return <Component/>
+}
 ```
 
-Or **specific** version like v0.1.3:
+### Documentation
 
-```shell
-https://github.com/Payadel/README/releases/download/v0.1.3/release.zip
-```
+[Documentation](https://linktodocumentation)
 
-2. Unzip Template
+## Known issues
 
-```shell
-unzip release.zip; wait; rm release.zip
-```
+Document any known significant shortcomings with the software.
 
-3. Run requirements script
+## CHANGELOG
 
-This script makes sure that tools like [pre-commit](https://pre-commit.com/) and `npm` packages are installed.
+## Features
 
-```shell
-chmod +x requirements.py && ./requirements.py
-```
+-
+-
 
-Or use **python**:
+## Roadmap
 
-```shell
-python3 requirements.py
-```
+See the [open issues](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues) for a list of proposed features (and known
+issues).
 
-4. (Optional) Commit changes
-
-In the next step, we are going to change the files. So it is better to commit the files.
-
-```shell
-git commit -am "Your message! For example: chore: add Payadel readme template"
-```
-
-5. Update files
-
-Look at the added files, especially the **document** files, and customize according to your project.
-
-For example:
-- **CHANGELOG.md**: if you want use `changelog` GitHub action, it is better to remove this file. Because `changelog` action does not rewrite this file, adds new data to the top of the file.
-- If you want to use **git hooks**: tell the programmers and document that after cloning the project, everyone must run the `requirements` file.
-
-6. Suggested actions
-
-- If you use `changelog` GitHub action: this action creates pull request, so needs permission to create PR. Please see [this link](https://stackoverflow.com/a/73155199/9999187) to give access.
-- Using git hooks to protect the main branches is good but not enough. The developer can disable the hooks or may forget to enable the hooks after cloning the project. Therefore, it is better to config the settings on the server side (such as GitHub, etc). For example, you can see [this link](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule) for GitHub settings.
-- For more convenience, scripts are defined in the `package.json` file. For example, GitHub's command-line tool (`gh`) is one of them. Using this tool is **optional**, but it can increase your comfort. To use this tool, first make sure it is installed. Secondly, log in to your account to have the necessary access. for more information: `gh --help`
-
-## Files
-
-### Issues
-
-- Bug report template
-
-- Feature request template
-
-- Codebase improvement template
-
-- Support Question template
-
-### Github workflows
-
-- CodeQL: Actions for running CodeQL analysis to find **security vulnerabilities**
-
-- Sync labels: By using this workflow, you can sync current labels with labels configured in a YAML manifest.
-
-- Lock: Lock closed issues and PRs
-
-- PR Labels
-
-### Other:
-
-- labels.yml: label colors
-- Pull request template
-- Code of conduct
-- Contributing
-- Security
-- Changelog
-- License (GPLv3)
-- Readme
+- [Top Feature Requests](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (
+  Add your votes using the 👍 reaction)
+- [Top Bugs](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (
+  Add your votes using the 👍 reaction)
+- [Newest Bugs](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 
 ## Support
 
+> **[?]**
+> Provide additional ways to contact the project maintainer/maintainers.
+
 Reach out to the maintainer at one of the following places:
 
-- [GitHub issues](https://github.com/Payadel/Readme/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+)
+- [GitHub issues](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues/new?assignees=&labels=question&template=SUPPORT_QUESTION.md&title=support%3A+)
+- Contact options listed on [this GitHub profile](https://github.com/GITHUB_USERNAME)
+
+## Used By
+
+This project is used by the following companies:
+
+- Company 1
+- Company 2
+
+## FAQ
+
+#### Question 1
+
+Answer 1
+
+#### Question 2
+
+Answer 2
+
+## Project assistance
+
+If you want to say **thank you** or/and support active development of PROJECT_NAME:
+
+- Add a [GitHub Star](https://github.com/GITHUB_USERNAME/REPO_SLUG) to the project.
+- Tweet about the PROJECT_NAME.
+- Write interesting articles about the project on [Dev.to](https://dev.to/), [Medium](https://medium.com/) or your
+  personal blog.
+
+Together, we can make PROJECT_NAME **better**!
 
 ## Contributing
 
@@ -127,18 +199,36 @@ appreciated**.
 
 Please read [our contribution guidelines](docs/CONTRIBUTING.md), and thank you for being involved!
 
+## Authors & contributors
+
+The original setup of this repository is by [GITHUB_USERNAME](https://github.com/GITHUB_USERNAME).
+
+For a full list of all authors and contributors,
+see [the contributors page](https://github.com/GITHUB_USERNAME/REPO_SLUG/contributors).
+
+## Security
+
+PROJECT_NAME follows good practices of security, but 100% security cannot be assured. PROJECT_NAME is provided **"as
+is"** without any **warranty**.
+
+_For more information and to report security issues, please refer to our [security documentation](docs/SECURITY.md)._
+
 ## License
 
 This project is licensed under the **GPLv3**.
 
 See [LICENSE](LICENSE) for more information.
 
+## Acknowledgements
+
+> **[?]**
+> If your work was funded by any organization or institution, acknowledge their support here.
+> In addition, if your work relies on other software libraries, or was inspired by looking at other work, it is appropriate to acknowledge this intellectual debt too.
+
 ## Related
 
-Here are some related projects:
+Here are some related projects
 
-- [Awesome README](https://github.com/matiassingers/awesome-readme)
-- [shields](https://shields.io/)
-- [keepachangelog](https://keepachangelog.com/en/1.0.0/)
-- [Semantic Versioning 2.0.0](https://semver.org/)
-- [You are what you document](https://www.ybrikman.com/writing/2014/05/05/you-are-what-you-document/)
+[Awesome README](https://github.com/matiassingers/awesome-readme)
+
+

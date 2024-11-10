@@ -6,9 +6,17 @@ on:
       version:
         required: false
         default: ''
+      ignore-same-version-error:
+        type: boolean
+        required: false
+        default: false
+      ignore-less-version-error:
+        type: boolean
+        required: false
+        default: false
       create-pr-for-branch:
         required: false
-        default: 'master'
+        default: ''
         description: Target branch? empty for skip.
       generate-changelog:
         type: choice
@@ -17,6 +25,17 @@ on:
           - never
           - always
           - auto
+      skip-release-file:
+        type: boolean
+        required: false
+        default: true
+        description: Skip create release file
+      release-file-name:
+        required: true
+        default: 'release'
+      release-directory:
+        required: true
+        default: '.'
 
 permissions:
   contents: write
@@ -32,7 +51,7 @@ jobs:
     #if: github.ref != 'refs/heads/main'
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -43,22 +62,35 @@ jobs:
           inputs: |
             - name: version
               default: ''
+            - name: ignore-same-version-error
+              default: 'false'
+            - name: ignore-less-version-error
+              default: 'false'
             - name: create-pr-for-branch
-              default: 'master'
+              default: ''
             - name: generate-changelog
               default: 'auto'
+            - name: skip-release-file
+              default: 'true'
+            - name: release-file-name
+              default: 'release'
+            - name: release-directory
+              default: '.'
             - name: current-branch-name
-              default: "$(git rev-parse --abbrev-ref HEAD)"
+              default: '$(git rev-parse --abbrev-ref HEAD)'
 
-      - uses: Payadel/release-sv-action@v0.3.1
+      - name: Release
+        uses: Payadel/release-sv-action@v0.3.1
         id: release
         with:
           version: ${{ steps.inputs.outputs.version }}
+          ignore-same-version-error: ${{ steps.inputs.outputs.ignore-same-version-error }}
+          ignore-less-version-error: ${{ steps.inputs.outputs.ignore-less-version-error }}
           create-pr-for-branch: ${{ steps.inputs.outputs.create-pr-for-branch }}
           generate-changelog: ${{ steps.inputs.outputs.generate-changelog }}
-          skip-release-file: false
-          release-file-name: 'release'
-          release-directory: 'release'
+          skip-release-file: ${{ steps.inputs.outputs.skip-release-file }}
+          release-file-name: ${{ steps.inputs.outputs.release-file-name }}
+          release-directory: ${{ steps.inputs.outputs.release-directory }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

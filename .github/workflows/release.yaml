@@ -51,12 +51,12 @@ jobs:
     #if: github.ref != 'refs/heads/main'
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Inputs
-        uses: payadel/inputs@v0.2.3
+        uses: payadel/inputs@v1
         id: inputs
         with:
           inputs: |
@@ -80,7 +80,7 @@ jobs:
               default: '$(git rev-parse --abbrev-ref HEAD)'
 
       - name: Release
-        uses: Payadel/release-sv-action@v0.3.1
+        uses: Payadel/release-sv-action@v0.3.3
         id: release
         with:
           version: ${{ steps.inputs.outputs.version }}

@@ -37,9 +37,24 @@ get_hooks_path() {
 	fi
 }
 
+command_exists() {
+    if command -v "$1" &> /dev/null; then
+        #echo "Command '$1' exists."
+        return 0
+    else
+        #echo "Command '$1' does not exist."
+        return 1
+    fi
+}
+
 # Check if pre-commit is installed
-if ! command -v pre-commit &>/dev/null; then
+if ! command_exists pre-commit; then
 	echo "Error: pre-commit is not installed. Please install it first."
+	exit 1
+fi
+
+if ! command_exists npm && [ -f package.json ]; then
+	echo "Error: npm is not installed. Please install it first."
 	exit 1
 fi
 
@@ -55,4 +70,8 @@ if [[ -n "$hooks_dir" ]]; then
 	enable_hook "$hooks_dir" "pre-rebase"
 else
 	echo "Git hooks directory not found."
+fi
+
+if [ -f package.json ]; then
+    npm install
 fi

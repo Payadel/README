@@ -29,6 +29,8 @@
 
 [![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/GITHUB_USERNAME/REPO_SLUG/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
 
+<!-- You can add more badges from this site: https://shields.io/ -->
+
 </div>
 
 <details>

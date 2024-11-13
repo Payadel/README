@@ -1,3 +1,5 @@
+#TODO: Replace {OWNER}/{REPO}
+
 on:
   push:
     branches:
@@ -12,20 +14,30 @@ name: release-please
 jobs:
   release-please:
     runs-on: ubuntu-latest
+
+    # Expose step outputs as job outputs
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      major: ${{ steps.release.outputs.major }}
+      minor: ${{ steps.release.outputs.minor }}
+      patch: ${{ steps.release.outputs.patch }}
+
     steps:
       - uses: googleapis/release-please-action@v4
         id: release
         with:
-          release-type: node # update it
+          release-type: simple #TODO: update it base your project
 
       # Step to manage version tags: delete existing tags, create new tags for major and minor versions, and push them to the remote repository
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: tag major and minor versions
         if: ${{ steps.release.outputs.release_created }}
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git remote add gh-token "https://${{ secrets.GITHUB_TOKEN }}@github.com/{OWNER}/{REPO}.git" # complete this
+          git remote add gh-token "https://${{ secrets.GITHUB_TOKEN }}@github.com/{OWNER}/{REPO}.git"
           git tag -d v${{ steps.release.outputs.major }} || true
           git tag -d v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} || true
           git push origin :v${{ steps.release.outputs.major }} || true
@@ -34,3 +46,22 @@ jobs:
           git tag -a v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} -m "Release v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}"
           git push origin v${{ steps.release.outputs.major }}
           git push origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}
+
+  #  TODO: Complete this
+  publish-docker:
+    needs: release-please
+    uses: {OWNER}/{REPO}/.github/workflows/.publish-docker.yml@main
+    if: ${{needs.release-please.outputs.release_created}}
+    with:
+      REPO_OWNER: {OWNER}
+      REPO_NAME: {REPO}
+      DOCKER_OWNER: {OWNER} # must lowercase
+      IMAGE_NAME: {REPO}
+      LICENSE: 'GPL-3.0'
+      major: ${{needs.release-please.outputs.major}}
+      minor: ${{needs.release-please.outputs.minor}}
+      patch: ${{needs.release-please.outputs.patch}}
+      DOCKER_CONTEXT_PATH: "./src"
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

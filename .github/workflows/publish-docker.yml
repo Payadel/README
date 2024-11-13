@@ -1,0 +1,89 @@
+name: Publish Docker image
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      MAJOR_VERSION:
+        description: 'Major version'
+        default: ''
+        required: true
+      MINOR_VERSION:
+        description: 'Minor version'
+        default: ''
+        required: true
+      PATCH_VERSION:
+        description: 'Patch version'
+        default: ''
+        required: true
+
+permissions:
+  packages: write
+  contents: read
+  attestations: write
+  id-token: write
+
+jobs:
+  get-data:
+    runs-on: ubuntu-latest
+
+    # Expose step outputs as job outputs
+    outputs:
+      major: ${{ steps.params.outputs.MAJOR_VERSION }}
+      minor: ${{ steps.params.outputs.MINOR_VERSION }}
+      patch: ${{ steps.params.outputs.PATCH_VERSION }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract version from tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          VERSION="${GITHUB_REF#refs/tags/v}"
+          echo "Version: $VERSION"
+
+          MAJOR=$(echo $VERSION | cut -d'.' -f1)
+          MINOR=$(echo $VERSION | cut -d'.' -f2)
+          PATCH=$(echo $VERSION | cut -d'.' -f3)
+
+          echo "MAJOR=$MAJOR" >> $GITHUB_ENV
+          echo "MINOR=$MINOR" >> $GITHUB_ENV
+          echo "PATCH=$PATCH" >> $GITHUB_ENV
+
+      - name: Set Parameters
+        uses: payadel/inputs@v1
+        id: params
+        with:
+          inputs: |
+            - name: BUILD_DATE
+              default: "$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            - name: MAJOR_VERSION
+              default: "$MAJOR"
+            - name: MINOR_VERSION
+              default: "$MINOR"
+            - name: PATCH_VERSION
+              default: "$PATCH"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+  #  TODO: Complete this
+  publish-docker:
+    needs: release-please
+    uses: {OWNER}/{REPO}/.github/workflows/.publish-docker.yml@main
+    if: ${{needs.release-please.outputs.release_created}}
+    with:
+      REPO_OWNER: {OWNER}
+      REPO_NAME: {REPO}
+      DOCKER_OWNER: {OWNER} # must lowercase
+      IMAGE_NAME: {REPO}
+      LICENSE: 'GPL-3.0'
+      major: ${{needs.release-please.outputs.major}}
+      minor: ${{needs.release-please.outputs.minor}}
+      patch: ${{needs.release-please.outputs.patch}}
+      DOCKER_CONTEXT_PATH: "./src"
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

@@ -1,9 +1,11 @@
 #!/bin/bash
-set -e
 
 # Usage:
 #   chmod +x -R scripts (only first time, make scripts executable)
 #   ./scripts/setup-hooks.sh (execute script)
+
+# Exit on error (e), undefined variable (u), or failed pipeline command (cmd1 | cmd2 | cmd3)
+set -euo pipefail
 
 # Function to enable a specific Git hook by copying its sample file
 enable_hook() {
@@ -23,55 +25,71 @@ enable_hook() {
 	fi
 }
 
-# Function to get the Git hooks path
-get_hooks_path() {
-	local git_root
-	git_root=$(git rev-parse --show-toplevel 2>/dev/null)
-	local hooks_path
-	hooks_path=$(git rev-parse --git-path hooks 2>/dev/null)
+get_root_path() {
+	git rev-parse --show-toplevel 2>/dev/null || echo ""
+}
 
-	if [[ -n "$git_root" && -n "$hooks_path" ]]; then
-		echo "$git_root/$hooks_path"
+get_package_json_path() {
+	local root_path
+	root_path=$(get_root_path)
+	if [ -z "$root_path" ]; then
+		echo "Error: Cannot determine the package.json path as the Git repository root could not be found."
+		return 1
+	fi
+
+	local package_json_path="$root_path/package.json"
+	if [[ -f "$package_json_path" ]]; then
+		echo "$package_json_path"
 	else
 		echo ""
 	fi
 }
 
-command_exists() {
-    if command -v "$1" &> /dev/null; then
-        #echo "Command '$1' exists."
-        return 0
-    else
-        #echo "Command '$1' does not exist."
-        return 1
-    fi
+get_hooks_path() {
+	git rev-parse --git-path hooks 2>/dev/null || echo ""
 }
 
-# Check if pre-commit is installed
-if ! command_exists pre-commit; then
-	echo "Error: pre-commit is not installed. Please install it first."
-	exit 1
-fi
+command_exists() {
+	command -v "$1" &>/dev/null
+}
 
-if ! command_exists npm && [ -f package.json ]; then
-	echo "Error: npm is not installed. Please install it first."
-	exit 1
-fi
+main() {
+	# Check if `pre-commit` is installed
+	if ! command_exists pre-commit; then
+		echo "Error: pre-commit is not installed. Please install it first."
+		exit 1
+	fi
 
-# Install pre-commit hooks
-pre_commit_hooks=("commit-msg" "prepare-commit-msg" "pre-merge-commit" "pre-push")
-for hook_type in "${pre_commit_hooks[@]}"; do
-	pre-commit install --hook-type "$hook_type"
-done
+	# Check for package.json and npm
+	local package_json_path
+	if ! package_json_path=$(get_package_json_path); then
+		echo "Warning! Skipping npm dependency installation because can not find package.json path."
+	elif ! command_exists npm; then
+		echo "Error: npm is required to install dependencies from package.json but is not installed."
+		exit 1
+	fi
 
-# Enable additional Git hooks if hook path exists
-hooks_dir=$(get_hooks_path)
-if [[ -n "$hooks_dir" ]]; then
-	enable_hook "$hooks_dir" "pre-rebase"
-else
-	echo "Git hooks directory not found."
-fi
+	# Install pre-commit hooks
+	local pre_commit_hooks=("commit-msg" "prepare-commit-msg" "pre-merge-commit" "pre-push")
+	for hook_type in "${pre_commit_hooks[@]}"; do
+		echo "Installing $hook_type pre-commit hook..."
+		pre-commit install --hook-type "$hook_type"
+	done
 
-if [ -f package.json ]; then
-    npm install
-fi
+	# Enable additional Git hooks
+	local hooks_dir
+	if hooks_dir=$(get_hooks_path); then
+		enable_hook "$hooks_dir" "pre-rebase"
+	else
+		echo "Git hooks directory not found. Skipping additional hook configuration."
+	fi
+
+	# Install npm dependencies if package.json exists
+	if [[ -n "$package_json_path" ]]; then
+		echo "Installing npm dependencies..."
+		npm install
+	fi
+}
+
+# Execute the main function
+main "$@"
